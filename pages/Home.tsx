@@ -6,9 +6,16 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-12 animate-in fade-in duration-1000">
       
-      <h1 className="font-serif text-3xl tracking-widest text-[#383530] text-center">
-        TERRAGRAMY
-      </h1>
+      <div className="lux-shimmer p-4 rounded-full">
+        <a href="https://www.freecooperation.cz" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/logo.webp" 
+            alt="Terragramy Logo" 
+            style={{ filter: 'drop-shadow(0 0 25px rgba(201, 162, 77, 0.2))' }}
+            className="w-48 h-auto"
+          />
+        </a>
+      </div>
 
       <div className="w-full max-w-sm grid grid-cols-2 gap-6">
         <Link 
