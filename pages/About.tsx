@@ -96,9 +96,10 @@ const About: React.FC = () => {
     <div className="min-h-screen px-6 py-20">
       <div className="about-section space-y-10">
         <div className="space-y-3 text-center md:text-left">
-          <p className="text-[10px] tracking-[0.4em] uppercase text-[color:var(--muted)]">O Terragramech</p>
-          <h1 className="text-3xl font-black tracking-[0.12em] text-[color:var(--text)] uppercase">Tichý iniciační prostor</h1>
-          <p className="max-w-3xl text-[color:var(--muted)] leading-relaxed text-sm">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">O Terragramech</p>
+          <h1 className="text-3xl font-serif tracking-[0.2em] text-[color:var(--text)] uppercase animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h1>
+          <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-300"></div>
+          <p className="max-w-3xl text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">
             Každá dlaždice je krátké zastavení — jedna myšlenka, jeden princip. Otevřete ji, až když ucítíte, že je to ta pravá.
           </p>
         </div>
@@ -107,7 +108,7 @@ const About: React.FC = () => {
           {TILES.map((tile, index) => (
             <article
               key={tile.title}
-              className="about-tile lux-shimmer"
+              className={`about-tile lux-shimmer ${index % 2 !== 0 ? 'md:mt-12' : ''}`}
               onClick={() => setActiveTile(index)}
               role="button"
               tabIndex={0}
@@ -119,8 +120,9 @@ const About: React.FC = () => {
               }}
             >
               <div>
-                <h3>{tile.title}</h3>
-                <p className="about-tile-intro">{tile.intro}</p>
+                <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{tile.title}</h3>
+                <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
+                <p className="about-tile-intro animate-in fade-in slide-in-from-bottom-2 delay-300">{tile.intro}</p>
               </div>
             </article>
           ))}
@@ -130,9 +132,12 @@ const About: React.FC = () => {
       {activeContent && (
         <div className="about-modal-overlay" onClick={() => setActiveTile(null)}>
           <div className="about-modal-card surface-card" onClick={event => event.stopPropagation()} role="dialog" aria-modal="true">
-            <h3>{activeContent.title}</h3>
+            <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{activeContent.title}</h3>
+            <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
             {activeContent.body.split('\n\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+              <p key={index} className={`animate-in fade-in slide-in-from-bottom-2 delay-${300 + index * 100}`}>
+                {paragraph}
+              </p>
             ))}
           </div>
         </div>

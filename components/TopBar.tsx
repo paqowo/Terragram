@@ -8,40 +8,26 @@ const TopBar: React.FC = () => {
 
   if (location.pathname === '/') return null;
 
-  const showTerragramTitle =
-    location.pathname.startsWith('/daily') ||
-    location.pathname.startsWith('/gallery') ||
-    location.pathname.startsWith('/card');
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 glass flex items-center justify-between border-b border-[color:var(--gold-soft)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 glass flex items-center justify-between">
       <button
         onClick={() => navigate(-1)}
-        className="text-[color:var(--muted)] hover:text-[color:var(--text)] transition-colors flex items-center gap-1 group"
+        className="text-[color:var(--muted)] hover:text-[color:var(--text)] transition-all duration-300 flex items-center gap-1 group hover:shadow-[0_0_10px_rgba(var(--gold-rgb),0.2)] rounded-full"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
         <span className="text-[10px] font-black uppercase tracking-[0.3em] ml-1">Zpět</span>
       </button>
-      <div className="absolute left-1/2 -translate-x-1/2">
+      <div className="absolute left-1/2 -translate-x-1/2 hidden sm:block"> {/* Hidden on small screens */}
         <Link to="/">
-          {showTerragramTitle ? (
-            <div className="text-center leading-tight">
-              <div className="text-sm tracking-[0.15em] text-[color:var(--text)]">
-                TerraGram – aktivační klíč a symbol světla
-              </div>
-            </div>
-          ) : (
-            <span className="font-black tracking-[0.25em] text-[color:var(--text)] text-sm uppercase whitespace-nowrap overflow-hidden text-ellipsis block max-w-[220px]">
-              Terragramy
-            </span>
-          )}
+            <span className="font-serif font-medium tracking-[0.3em] text-[color:var(--text)] text-sm uppercase whitespace-nowrap">TERRAGRAMY</span>
         </Link>
       </div>
       <Link
         to="/about"
-        className="luxury-cta luxury-cta-soft luxury-cta-nav text-sm tracking-[0.25em] text-[color:var(--text)] transition-colors"
+        className="relative inline-block text-sm tracking-[0.25em] text-[color:var(--text)] transition-colors duration-300
+                   after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[color:var(--gold)] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
       >
         O Terragramech
       </Link>

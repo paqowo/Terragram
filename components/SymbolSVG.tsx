@@ -26,21 +26,27 @@ export const SymbolSVG: React.FC<SymbolSVGProps> = ({
     return <div className={className} />;
   }
 
+  // Ensure color is available to set CSS variable
+  const symbolAccentColor = color || 'transparent'; 
+
   return (
-    <img
-      src={src}
-      alt=""
-      className={className}
-      role="presentation"
-      onError={() => {
-        if (!triedFallback && slugWithUnderscore !== slug) {
-          setSrc(`/symbols/${slugWithUnderscore}.webp`);
-          setTriedFallback(true);
-        } else {
-          setHasError(true);
-        }
-      }}
-      {...(color ? { 'data-accent-color': color } : {})}
-    />
+    <div
+      className={`relative group symbol-glow-effect ${className}`}
+      style={{ '--symbol-accent-color': symbolAccentColor } as React.CSSProperties}
+    >
+      <img
+        src={src}
+        alt=""
+        className="relative z-10 w-full h-full"
+        onError={() => {
+          if (!triedFallback && slugWithUnderscore !== slug) {
+            setSrc(`/symbols/${slugWithUnderscore}.webp`);
+            setTriedFallback(true);
+          } else {
+            setHasError(true);
+          }
+        }}
+      />
+    </div>
   );
 };

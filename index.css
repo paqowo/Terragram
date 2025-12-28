@@ -12,20 +12,23 @@
   --gold-soft: rgba(201, 162, 77, 0.22);
   --gold-muted: rgba(201, 162, 77, 0.35);
   --shadow: 0 18px 60px rgba(43, 38, 34, 0.10);
+  /* New ambient accent for dynamic glow */
+  --ambient-accent: #C9A24D; /* Default value */
+  --ambient-accent-rgb: 201, 162, 77; /* Default value */
+  --gold-rgb: 201, 162, 77; /* RGB equivalent of #C9A24D */
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 5px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 5px),
-    radial-gradient(900px 600px at 50% 10%, rgba(43, 38, 34, 0.06), transparent 65%),
-    radial-gradient(1200px 700px at 50% 0%, rgba(201, 162, 77, 0.08), transparent 55%),
-    radial-gradient(1600px 900px at 50% 90%, rgba(43, 38, 34, 0.05), transparent 70%),
-    var(--bg);
+  background-color: #F5F5F0;
+  background-image:
+    radial-gradient(1200px 800px at 15% 15%, rgba(var(--ambient-accent-rgb, 0,0,0), 0.05), transparent 70%), /* New dynamic ambient gradient */
+    radial-gradient(circle at center, #F5F5F0 0%, #EAEAE5 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed;
   color: var(--text);
+  transition: background-image 0.8s ease-out; /* Add transition for smooth changes */
 }
 
 a,
@@ -251,8 +254,16 @@ button {
 .about-tiles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 2.5rem;
 }
+
+@media (min-width: 1024px) {
+  .about-tiles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+}
+
 
 .about-tiles-grid.is-dimmed article {
   opacity: 0.35;
@@ -262,27 +273,29 @@ button {
 .about-tile {
   position: relative;
   border-radius: 30px;
-  border: 1px solid rgba(201, 162, 77, 0.18);
   padding: 1.5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 238, 0.85));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  min-height: 150px;
-  height: auto;
   cursor: pointer;
-  transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /* Glassmorphism base */
+  backdrop-filter: blur(8px) saturate(160%);
+  background-color: rgba(245, 245, 240, 0.6);
+  border: 1px solid rgba(201, 162, 77, 0.25); /* Initial Gold Leaf accent */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7); /* Subtle inner shadow */
 }
 
 .about-tile:hover,
 .about-tile:focus-visible {
   transform: translateY(-6px);
-  border-color: rgba(201, 162, 77, 0.4);
+  border-color: rgba(201, 162, 77, 0.7); /* More vibrant Gold Leaf on hover */
+  backdrop-filter: blur(16px) saturate(180%); /* Increased blur on hover */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 20px 50px rgba(43, 38, 34, 0.08);
+    0 20px 50px rgba(43, 38, 34, 0.12); /* Slightly larger outer shadow */
 }
 
 .about-tile h3 {
@@ -349,4 +362,97 @@ button {
     height: 210px;
     padding: 1.75rem;
   }
+}
+
+.glass {
+  backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(245, 245, 240, 0.7);
+  border-top: 1px solid rgba(201, 162, 77, 0.3);
+  border-bottom: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.shadow-aspect-card {
+    background: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.08) 100%);
+    border: 1px solid rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.watermark-text {
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+}
+
+.symbol-glow-effect {
+  position: relative;
+}
+
+.symbol-glow-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 100%;
+  height: 100%;
+  background-color: var(--symbol-accent-color);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.symbol-glow-effect.group:hover::after {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.5;
+}
+
+/* Gold Dust Particles */
+@keyframes gold-dust {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.08; }
+  100% { transform: translateY(-100vh) translateX(50vw); opacity: 0; }
+}
+
+.gold-dust-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.gold-dust-particles::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Start below the viewport */
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: rgba(var(--gold-rgb), 0.05); /* Very subtle gold */
+  box-shadow:
+    /* x y blur spread color */
+    5vw 10vh 0 1px rgba(var(--gold-rgb), 0.08),
+    15vw 30vh 0 0.5px rgba(var(--gold-rgb), 0.06),
+    25vw 50vh 0 1px rgba(var(--gold-rgb), 0.09),
+    35vw 70vh 0 0.5px rgba(var(--gold-rgb), 0.07),
+    45vw 90vh 0 1px rgba(var(--gold-rgb), 0.08);
+  animation: gold-dust 30s linear infinite; /* Slow, continuous animation */
+  animation-delay: -15s; /* Stagger animation start */
+}
+
+/* Text Smoothing */
+.font-serif {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: common-ligatures;
+}
+
+::selection {
+  background: rgba(var(--ambient-accent-rgb), 0.2);
 }
