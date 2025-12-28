@@ -8,7 +8,6 @@ const DailyReveal: React.FC = () => {
   const [revealed, setRevealed] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [card, setCard] = useState<Card | null>(null);
-  const [frontLogoSrc, setFrontLogoSrc] = useState('/logo_bile.webp');
 
   useEffect(() => {
     const slug = getDailyCardSlug();
@@ -19,66 +18,67 @@ const DailyReveal: React.FC = () => {
   const handleReveal = () => {
     if (isAnimatingOut || revealed) return;
     setIsAnimatingOut(true);
-    // Wait for the fade-out animation to finish (500ms) before setting revealed to true
     setTimeout(() => {
       setRevealed(true);
-    }, 500);
+    }, 700); // Match animation duration
   };
 
   if (!card) return null;
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center px-6 pt-10 pb-10 gap-6">
-      <div className="w-full max-w-[560px]">
-        
-        {/* Back of the card (the revealable part) */}
-        {!revealed && (
-          <div
-            onClick={handleReveal}
-            className={`w-full rounded-[40px] surface-card cursor-pointer overflow-hidden transition-all duration-700 lux-shimmer ${isAnimatingOut ? 'animate-out fade-out zoom-out-95' : 'animate-in fade-in'}`}
-            style={{ height: 'min(62vh, 620px)' }}
-          >
-            <div className="relative w-full h-full flex flex-col items-center justify-center px-8">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-stone-50 to-stone-100" />
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 py-10 gap-8">
+      
+      {/* The new "Sacred Ritual" card view */}
+      {!revealed && (
+        <div
+          onClick={handleReveal}
+          className={`relative w-full max-w-sm aspect-[9/16] rounded-3xl cursor-pointer
+                      transition-all duration-700 ease-in-out
+                      ${isAnimatingOut ? 'animate-out fade-out scale-95' : 'animate-in fade-in slide-in-from-bottom-5 duration-1000'}`}
+        >
+          {/* Glass-Stone Effect Container */}
+          <div className="absolute inset-0 w-full h-full rounded-3xl backdrop-blur-xl bg-white/40 border border-white/20 shadow-2xl" />
 
-              <div className="relative z-20 flex w-full h-full flex-col items-center justify-center">
-                <div className="logo-panel w-full max-w-[420px]">
-                  <img
-                    src={frontLogoSrc}
-                    alt="TerraGram symbol světla"
-                    className="w-full h-auto object-contain animate-float"
-                    onError={() => setFrontLogoSrc('/logo_white.webp')}
-                  />
-                </div>
-                <p className="mt-4 text-center text-sm tracking-wide text-neutral-700">
-                  Dovolte světlu promluvit
-                </p>
-              </div>
+          {/* Ambient Glow */}
+          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-orange-400/50 blur-3xl animate-pulse-slow rounded-full" />
+          
+          {/* Content: Centered Logo and Text */}
+          <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
+            <div className="flex-grow flex items-center justify-center">
+              <img
+                src="/logo.webp"
+                alt="TerraGram symbol světla"
+                className="w-4/5 h-auto object-contain drop-shadow-lg"
+              />
             </div>
+            <p className="font-serif text-sm tracking-[0.2em] text-center text-[color:var(--muted)]">
+              Dovolte světlu promluvit
+            </p>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Front of the card (the detail view) */}
-        {revealed && (
-          <div className="w-full animate-in fade-in zoom-in-105 duration-1000 delay-100">
-            <CardDetailView card={card} />
-          </div>
-        )}
-      </div>
+      {/* Card Detail View After Reveal */}
+      {revealed && (
+        <div className="w-full max-w-lg animate-in fade-in zoom-in-105 duration-1000 delay-100">
+          <CardDetailView card={card} />
+        </div>
+      )}
 
-      {/* Button and text, only visible before reveal */}
+      {/* Controls and Instructions, only visible before reveal */}
       {!revealed && !isAnimatingOut && (
-        <div className="w-full max-w-[560px] flex flex-col items-center gap-3 animate-in fade-in duration-500">
+        <div className="w-full max-w-sm flex flex-col items-center gap-6 animate-in fade-in duration-1000 delay-200">
           <button
             onClick={handleReveal}
-            className="luxury-cta px-7 py-3 rounded-full text-[11px] font-black lux-shimmer transition-all duration-300
-                       bg-[linear-gradient(to_right,rgba(var(--gold-rgb),0.08),transparent)] border-[1px] border-[rgba(var(--gold-rgb),0.5)]
-                       tracking-[0.45em] hover:tracking-[0.6em] hover:shadow-[0_0_20px_rgba(var(--gold-rgb),0.3)]"
+            className="font-serif text-[color:var(--text)] text-opacity-80 text-xs tracking-[0.3em] uppercase
+                       border-[0.5px] border-[color:var(--gold)] border-opacity-60 rounded-full px-10 py-3
+                       transition-all duration-300 ease-in-out
+                       hover:border-opacity-100 hover:shadow-[0_0_20px_rgba(var(--gold-rgb),0.4)]"
           >
             Aktivovat klíč
           </button>
 
-          <p className="max-w-[520px] text-center text-[color:var(--muted)] text-sm leading-relaxed tracking-wide">
+          <p className="max-w-xs text-center text-[color:var(--muted)] text-xs leading-relaxed tracking-wide">
             Ztište svou mysl a nechte svou pozornost spočinout v nitru. V tomto tichu se symbol stává klíčem k Vašemu Poznání.
           </p>
         </div>

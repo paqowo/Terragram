@@ -66,11 +66,14 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen px-6 py-20">
       <div className="about-section space-y-10">
-        <div className="space-y-3 text-center md:text-left">
-          <p className="text-[10px] tracking-[0.4em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100 font-serif">O terragramech</p>
-          <h1 className="text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] uppercase animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h1>
-          <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-300"></div>
-          <p className="max-w-2xl text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">Každý Terragram je zrcadlem, ve kterém se odráží hloubka Vaší podstaty. Nespěchejte. Nechte se vést tichým vjemem k symbolu, který si Vás přitáhne. Právě v něm se skrývá princip, který je připraven k rozvinutí.</p>
+        <div className="space-y-6 text-center">
+          <p className="font-light text-[10px] tracking-[0.5em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">o terragramech</p>
+          <div className="space-y-4">
+            <h1 className="text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Cesta k vnitřnímu světlu</h1>
+            <h2 className="text-3xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h2>
+          </div>
+          <div className="divider-gold w-full max-w-xs mx-auto animate-in fade-in slide-in-from-bottom-2 delay-300"></div>
+          <p className="max-w-xl mx-auto text-balance text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">Každý Terragram je zrcadlem, ve kterém se odráží hloubka Vaší podstaty. Nespěchejte. Nechte se vést tichým vjemem k symbolu, který si Vás přitáhne. Právě v něm se skrývá princip, který je připraven k rozvinutí.</p>
         </div>
 
         <div className={`about-tiles-grid ${activeTile !== null ? 'is-dimmed' : ''}`}>
