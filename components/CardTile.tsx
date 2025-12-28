@@ -40,9 +40,19 @@ const CardTile: React.FC<CardTileProps> = ({ card }) => {
       /> */}
 
       <div className="p-6 h-full flex flex-col items-center justify-center space-y-4 relative z-10">
-        <div className="w-20 h-20 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-          <SymbolSVG slug={card.slug} color={card.accent} />
+        <div className="relative flex items-center justify-center">
+          {/* Ambient Glow */}
+          <div 
+            className="absolute w-24 h-24 rounded-full blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-50"
+            style={{ backgroundColor: card.accent }}
+          />
+          
+          {/* Symbol */}
+          <div className="relative w-24 h-24 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+            <SymbolSVG slug={card.slug} color={card.accent} />
+          </div>
         </div>
+        
         {/* Glass Label */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm bg-white/20 border border-white/30 text-center transition-all duration-300 group-hover:bg-white/40">
           <h3 className="text-[10px] tracking-[0.25em] font-black text-[color:var(--text)] uppercase whitespace-nowrap">{card.title}</h3>

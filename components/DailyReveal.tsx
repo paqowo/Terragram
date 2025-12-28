@@ -51,7 +51,7 @@ const DailyReveal: React.FC = () => {
                   />
                 </div>
                 <p className="mt-4 text-center text-sm tracking-wide text-neutral-700">
-                  Nechť symbol světla promluví
+                  Dovolte světlu promluvit
                 </p>
               </div>
             </div>
@@ -78,8 +78,8 @@ const DailyReveal: React.FC = () => {
             Aktivovat klíč
           </button>
 
-          <p className="max-w-[520px] text-center text-[color:var(--muted)] text-sm leading-relaxed uppercase tracking-[0.18em]">
-            Nechť symbol světla promluví v okamžiku, kdy pozornost spočine na jeho znamení.
+          <p className="max-w-[520px] text-center text-[color:var(--muted)] text-sm leading-relaxed tracking-wide">
+            Ztište svou mysl a nechte svou pozornost spočinout v nitru. V tomto tichu se symbol stává klíčem k Vašemu Poznání.
           </p>
         </div>
       )}

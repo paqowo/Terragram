@@ -1,30 +1,38 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LogoLink from '../components/LogoLink';
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-16 animate-in fade-in duration-1000">
-      <div className="flex flex-col items-center space-y-3">
-        <LogoLink sizeClass="h-56 w-auto max-w-sm object-contain" />
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-12 animate-in fade-in duration-1000">
+      
+      <h1 className="font-serif text-3xl tracking-widest text-[#383530] text-center">
+        TERRAGRAMY
+      </h1>
 
-      <div className="w-full max-w-xs flex flex-col space-y-4">
+      <div className="w-full max-w-sm grid grid-cols-2 gap-6">
         <Link 
           to="/daily"
-          className="group relative overflow-hidden w-full py-6 rounded-[24px] surface-card hover:-translate-y-1 transition-all duration-300 flex flex-col items-center"
+          className="group surface-card aspect-[2/3] rounded-[32px] hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center p-4 text-center"
         >
-          <span className="text-[color:var(--text)] font-medium text-lg">Karta dne</span>
-          <span className="text-[color:var(--muted)] text-[10px] uppercase tracking-widest mt-1">Denní rituál</span>
+          <div className="w-16 h-16 rounded-full border border-[rgba(201,162,77,0.3)] bg-[rgba(201,162,77,0.05)] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full border border-[rgba(201,162,77,0.3)]"></div>
+          </div>
+          <span className="text-[color:var(--text)] font-medium text-sm mt-4">Karta dne</span>
+          <span className="text-xs text-[color:var(--muted)] mt-1 px-2">Prožitek přítomného okamžiku</span>
         </Link>
 
         <Link 
           to="/gallery"
-          className="group relative overflow-hidden w-full py-6 rounded-[24px] surface-card hover:-translate-y-1 transition-all duration-300 flex flex-col items-center"
+          className="group surface-card aspect-[2/3] rounded-[32px] hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center p-4 text-center"
         >
-          <span className="text-[color:var(--text)] font-medium text-lg">Galerie</span>
-          <span className="text-[color:var(--muted)] text-[10px] uppercase tracking-widest mt-1">Všech 16 symbolů</span>
+           <div className="w-16 h-16 flex items-center justify-center">
+             <svg className="w-10 h-10 text-[rgba(201,162,77,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+           </div>
+          <span className="text-[color:var(--text)] font-medium text-sm mt-4">Galerie</span>
+          <span className="text-xs text-[color:var(--muted)] mt-1 px-2">Svatyně kvalit bytí</span>
         </Link>
       </div>
       

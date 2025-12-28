@@ -21,14 +21,23 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: #F5F5F0;
+  background-color: #F2F0E9;
   background-image:
-    radial-gradient(1200px 800px at 15% 15%, rgba(var(--ambient-accent-rgb, 0,0,0), 0.05), transparent 70%), /* New dynamic ambient gradient */
-    radial-gradient(circle at center, #F5F5F0 0%, #EAEAE5 100%),
+    radial-gradient(circle at center, #FBF9F6 0%, #EBE7DE 100%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed;
-  color: var(--text);
-  transition: background-image 0.8s ease-out; /* Add transition for smooth changes */
+  color: #383530;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.uppercase {
+  letter-spacing: 0.25em;
+  font-size: 11px;
 }
 
 a,
@@ -37,12 +46,17 @@ button {
 }
 
 .surface-card {
-  background: linear-gradient(180deg, #ffffff 0%, #F8F4EE 100%);
-  border: 1px solid var(--gold-soft);
-  box-shadow:
-    0 30px 60px rgba(43, 38, 34, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(43, 38, 34, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  border-radius: 32px; /* Added large border-radius */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-shadow-paper {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
 }
 
 .surface-card:hover {
@@ -451,6 +465,7 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-variant-ligatures: common-ligatures;
+  letter-spacing: 0.05em;
 }
 
 ::selection {

@@ -10,8 +10,7 @@ const Gallery: React.FC = () => {
           Galerie Terragramů
         </h1>
         <p className="text-[color:var(--muted)] text-[11px] tracking-[0.15em] max-w-3xl mx-auto whitespace-nowrap overflow-hidden text-ellipsis">
-          Každý Terragram nese určitou kvalitu bytí. Symbol světla slouží jako jazyk
-          vnímání, nikoli jako popis.
+          Zrcadlo poznání. Symbol, který nepromlouvá k mysli, ale k tichu uvnitř Vás. Nechte se vést rezonancí tvarů.
         </p>
       </header>
 

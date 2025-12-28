@@ -2,89 +2,60 @@ import React, { useMemo, useState } from 'react';
 
 const TILES = [
   {
-    title: 'Co jsou Terragramy',
-    intro: 'Terragramy nejsou náhodné symboly ani nástroje víry.',
-    body: `Terragramy jsou aktivačními klíči, které pracují s hlubšími vrstvami vědomí – osobního i planetárního.
-Nevznikly jako systém víry, ale jako odpověď na potřebu navrácení celistvosti: k sobě samým, k Zemi a k přirozenému řádu vývoje.
+    title: 'Původ Terragramů',
+    intro: 'Vibrační dar z hlubin hory Blaník.',
+    body: `Terragramy nejsou plodem lidské mysli, ale vibračním darem z nitra hory Blaník. Vynořily se jako světelné pilíře, které pomáhají duši v nastávajícím přechodu a transformaci. 
 
-Jejich původ je spojen s vibračními kvalitami krajiny hory Blaník – místa, kde byly po věky uchovávány principy poznání, ochrany a sjednocení.
-Terragramy nejsou určeny k vysvětlování světa, ale k jeho vnitřnímu rozpoznání.`
+Jsou to planetární ochránci – nástroje, které hlídají moudrost k objevení pravého Poznání. Jejich úkolem je obnovit pokřivené planetární úrovně a očistit je plamenem uvědomění. Přicházejí, aby podpořily vzestup Země i každého z nás do stavu celistvosti.`
   },
   {
-    title: 'Symbol světla',
-    intro: 'Symbol světla není popis. Je jazyk.',
-    body: `Terragram není popisem reality.
-Je jazykem vnímání.
+    title: 'Symbol Světla',
+    intro: 'Jazyk vnímání, který obchází mysl.',
+    body: `Symbol světla není popis reality, je to rezonance. Tvary a linie promlouvají přímo k vibračnímu potenciálu vaší posvátné Duše. 
 
-Tvary, linie a barvy nepůsobí skrze význam, ale skrze rezonanci.
-Symbol neříká, co si myslet.
-Umožňuje něco vnímat.
-
-Tím obchází hodnocení, ego i naučené mentální vzorce a dotýká se přímo kvality Duše.`
+Zatímco slova se snaží vysvětlovat, symbol umožňuje cítit. Jako tichý jazyk obchází naučené vzorce ega a dotýká se míst, kde sídlí vaše opravdové „Já“. Je to most mezi vnějším projevem a vnitřní esencí.`
   },
   {
-    title: 'Kvality bytí',
-    intro: 'Každý Terragram nese určitou kvalitu bytí.',
-    body: `Každý Terragram vyjadřuje konkrétní kvalitu bytí:
-změnu, důvěru, vášeň, tvořivost, dokončení, osvobození…
+    title: 'Kvality Bytí',
+    intro: 'Dvanáct bran k vaší vnitřní svatyni.',
+    body: `Každý Terragram nese unikátní kvalitu bytí: změnu, vášeň, důvěru či tvořivost. Těchto dvanáct kvalit tvoří ucelenou svatyni pro osobní růst a posílení těla i ducha.
 
-Tyto kvality nejsou vnější.
-Jsou již přítomné v člověku.
-Symbol je pouze zrcadlí a aktivuje ve chvíli, kdy je člověk připraven je rozpoznat.`
+Symboly tyto kvality nevytvářejí, ony je zrcadlí. Ukazují vám, co je ve vás již přítomné, ale dosud možná skryté za oponou iluzí. Jsou to semínka, která čekají na vaši pozornost, aby mohla vzklíčit do plné síly.`
   },
   {
-    title: 'Aktivační klíč',
-    intro: 'Aktivace není proces. Je to setkání.',
-    body: `Aktivace Terragramu není mechanický proces.
-Nevzniká „použitím“, ale setkáním.
+    title: 'Aktivační klíče',
+    intro: 'Dotek, který probouzí vibrační potenciál.',
+    body: `Karty Terragramů jsou aktivačními klíči. Jejich síla se neprobouzí mechanickým použitím, ale vědomým setkáním. 
 
-Ve chvíli vnitřního ztišení a otevřenosti se symbol stává aktivačním klíčem – jemným impulzem, který poukazuje na pokřivení osobnosti a současně pozvedá kvality Duše.
-
-Aktivace se nedá vynutit.
-Vzniká přirozeně, ve správný čas.`
+V okamžiku vnitřního ztišení a přijetí se symbol aktivuje. Poukazuje na pokřivení osobnosti, ale zároveň pozvedá kvality Duše k jejich čistému vyjádření. Aktivace je milostným aktem alchymie, kdy se vaše pozornost spojuje se zdrojem.`
   },
   {
-    title: 'Princip svobodné spolupráce',
-    intro: 'Energie symbolů světla nelze zneužít.',
-    body: `Terragramy působí pouze tam, kde je přítomna svobodná vůle k růstu a respekt ke spolupráci.
+    title: 'Svobodná spolupráce',
+    intro: 'Energie, kterou nelze zneužít.',
+    body: `Základním zákonem Terragramů je svobodná spolupráce. Jsou nástrojem světla, a proto jejich energii nelze zneužít k negativním účelům. 
 
-Nevedou.
-Nenutí.
-Nezasahují.
-
-Pouze odhalují to, co je připraveno být uviděno.
-Proto nemohou být zneužity ani použity proti vůli člověka.`
+Působí pouze tam, kde je přítomna láska a pokora k vývoji. Symboly nenutí, nevedou ani nezasahují proti vůli. Jsou tu, aby vyrovnávaly vesmírnou dualitu a umožnily Božímu JÁ přijmout celistvé poznání.`
   },
   {
-    title: 'Jak s Terragramy pracovat',
-    intro: 'Terragram neříká, co dělat.',
-    body: `Terragramy lze používat různými způsoby:
+    title: 'Cesty setkání',
+    intro: 'Od rituálu k energetickému zářiči.',
+    body: `S Terragramy lze pracovat mnoha způsoby, podle toho, co vaše cesta právě vyžaduje. Mohou být denním rituálem, průvodcem při výkladu nebo nástrojem pro kolektivní konstelace.
 
-– jako denní rituál
-– jako výklad
-– v osobní nebo kolektivní konstelaci
-– jako energetický zářič prostoru či krajiny
-
-Ve všech případech platí totéž:
-Terragram neříká, co dělat.
-Ukazuje, kde se právě nacházíte.`
+Slouží také jako energetické zářiče – pročišťují prostor od negativních energií, harmonizují krajinu a pomáhají regenerovat zraněná místa Země. Terragram vám neříká, co máte dělat; ukazuje vám, kým v danou chvíli jste.`
   },
   {
     title: 'Sjednocení',
-    intro: 'Soubor Terragramů tvoří uzavřený celek.',
-    body: `Terragramy se vzájemně doplňují a vytvářejí ucelený systém kvalit bytí.
+    intro: 'Návrat z oddělenosti ke zdroji.',
+    body: `Soubor Terragramů tvoří uzavřený celek, chrám portálu sjednocení. Je to nástroj pro mystickou svatbu Duše a Ducha.
 
-Jejich propojením vzniká princip Sjednocení – návrat Duše z oddělenosti zpět do vědomého bytí.
-Nejde o cíl, ale o stav vnitřního rozpoznání.`
+Sjednocení znamená konec hledání cesty. Je to stav, kdy si uvědomíte, že nejste odděleni od vědění, ale jste jeho součástí. V tomto bodě se rozpouští dualita a vy se navracíte na své právoplatné místo v evolučním plánu vzestupu.`
   },
   {
-    title: 'Tichý průvodce',
-    intro: 'Terragramy nejsou cílem.',
-    body: `Terragramy nejsou cílem.
-Jsou tichým průvodcem na cestě k celistvému poznání.
+    title: 'Tichý Průvodce',
+    intro: 'Stát se cestou, nikoliv poutníkem.',
+    body: `Terragramy nejsou cílem. Jsou ukazateli na cestě k celistvému poznání, které vás postupně učí opouštět lpění na identitě a egu. 
 
-V určitém bodě člověk přestává hledat cestu.
-Uvědomuje si, že on sám je cestou.`
+V určitém bodě ticho převáží nad otázkami. Člověk přestává hledat cestu, protože pochopí, že on sám je cestou. Terragramy v tomto okamžiku splnily svůj účel – dovedly vás k rozpoznání vaší vlastní božské podstaty.`
   }
 ];
 
@@ -96,12 +67,10 @@ const About: React.FC = () => {
     <div className="min-h-screen px-6 py-20">
       <div className="about-section space-y-10">
         <div className="space-y-3 text-center md:text-left">
-          <p className="text-[10px] tracking-[0.4em] uppercase text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">O Terragramech</p>
+          <p className="text-[10px] tracking-[0.4em] uppercase text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">Cesta k vnitřnímu světlu</p>
           <h1 className="text-3xl font-serif tracking-[0.2em] text-[color:var(--text)] uppercase animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h1>
           <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-300"></div>
-          <p className="max-w-3xl text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">
-            Každá dlaždice je krátké zastavení — jedna myšlenka, jeden princip. Otevřete ji, až když ucítíte, že je to ta pravá.
-          </p>
+          <p className="max-w-3xl text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">Každý symbol je zastavením na cestě k sobě. Jedna myšlenka, jeden princip, jeden klíč. Vnímejte srdcem a otevřete dlaždici, která k vám právě teď promlouvá.</p>
         </div>
 
         <div className={`about-tiles-grid ${activeTile !== null ? 'is-dimmed' : ''}`}>
