@@ -6,10 +6,10 @@ const Gallery: React.FC = () => {
   return (
     <div className="min-h-screen pt-24 pb-12 px-6">
       <header className="mb-10 text-center space-y-3">
-        <h1 className="text-2xl font-light tracking-[0.1em] text-stone-800 uppercase">
+        <h1 className="text-2xl font-light tracking-[0.1em] text-[color:var(--text)] uppercase">
           Galerie Terragramů
         </h1>
-        <p className="text-stone-400 text-[11px] tracking-[0.15em] max-w-3xl mx-auto whitespace-nowrap overflow-hidden text-ellipsis">
+        <p className="text-[color:var(--muted)] text-[11px] tracking-[0.15em] max-w-3xl mx-auto whitespace-nowrap overflow-hidden text-ellipsis">
           Každý Terragram nese určitou kvalitu bytí. Symbol světla slouží jako jazyk
           vnímání, nikoli jako popis.
         </p>
@@ -25,3 +25,5 @@ const Gallery: React.FC = () => {
 };
 
 export default Gallery;
+
+

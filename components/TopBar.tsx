@@ -9,13 +9,15 @@ const TopBar: React.FC = () => {
   if (location.pathname === '/') return null;
 
   const showTerragramTitle =
-    location.pathname.startsWith('/daily') || location.pathname.startsWith('/gallery');
+    location.pathname.startsWith('/daily') ||
+    location.pathname.startsWith('/gallery') ||
+    location.pathname.startsWith('/card');
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 glass flex items-center justify-between border-b border-stone-200/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 glass flex items-center justify-between border-b border-[color:var(--gold-soft)]">
       <button
         onClick={() => navigate(-1)}
-        className="text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-1 group"
+        className="text-[color:var(--muted)] hover:text-[color:var(--text)] transition-colors flex items-center gap-1 group"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -26,12 +28,12 @@ const TopBar: React.FC = () => {
         <Link to="/">
           {showTerragramTitle ? (
             <div className="text-center leading-tight">
-              <div className="text-sm tracking-[0.15em] text-stone-800">
+              <div className="text-sm tracking-[0.15em] text-[color:var(--text)]">
                 TerraGram – aktivační klíč a symbol světla
               </div>
             </div>
           ) : (
-            <span className="font-black tracking-[0.25em] text-stone-800 text-sm uppercase whitespace-nowrap overflow-hidden text-ellipsis block max-w-[220px]">
+            <span className="font-black tracking-[0.25em] text-[color:var(--text)] text-sm uppercase whitespace-nowrap overflow-hidden text-ellipsis block max-w-[220px]">
               Terragramy
             </span>
           )}
@@ -39,7 +41,7 @@ const TopBar: React.FC = () => {
       </div>
       <Link
         to="/about"
-        className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-500 hover:text-stone-900 transition-colors"
+        className="luxury-cta luxury-cta-soft luxury-cta-nav text-sm tracking-[0.25em] text-[color:var(--text)] transition-colors"
       >
         O Terragramech
       </Link>

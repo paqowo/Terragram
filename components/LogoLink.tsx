@@ -22,13 +22,14 @@ const LogoLink: React.FC<LogoLinkProps> = ({ sizeClass = 'h-16 w-auto object-con
           width={128}
           height={128}
         />
-        <span className="sr-only font-black tracking-[-0.05em] text-stone-800">
+        <span className="sr-only font-black tracking-[-0.05em] text-[color:var(--text)]">
           TERRAGRAMY
         </span>
-        <div className="h-[2px] w-12 bg-stone-800 mt-1"></div>
+        <div className="divider-gold mt-1 w-12" aria-hidden="true"></div>
       </div>
     </a>
   );
 };
 
 export default LogoLink;
+

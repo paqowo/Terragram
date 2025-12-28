@@ -12,7 +12,7 @@ const CardTile: React.FC<CardTileProps> = ({ card }) => {
   return (
     <Link 
       to={`/card/${card.slug}`}
-      className="relative group cursor-pointer aspect-square bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 block border border-stone-100"
+      className="relative group cursor-pointer aspect-square overflow-hidden rounded-[28px] surface-card lux-shimmer hover:-translate-y-2 transition-all duration-500 block"
     >
       <div 
         className="absolute inset-0 transition-opacity duration-500"
@@ -24,7 +24,7 @@ const CardTile: React.FC<CardTileProps> = ({ card }) => {
           <SymbolSVG slug={card.slug} color={card.accent} />
         </div>
         <div className="text-center">
-          <h3 className="text-[10px] tracking-[0.25em] font-black text-stone-800 uppercase">{card.title}</h3>
+          <h3 className="text-[10px] tracking-[0.25em] font-black text-[color:var(--text)] uppercase">{card.title}</h3>
         </div>
       </div>
     </Link>

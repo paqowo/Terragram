@@ -12,10 +12,10 @@ const CardDetail: React.FC = () => {
   if (!card) {
     return (
       <div className="h-screen flex flex-col items-center justify-center space-y-4">
-        <p className="text-stone-400">Karta nenalezena</p>
+        <p className="text-[color:var(--muted)]">Karta nenalezena</p>
         <button 
           onClick={() => navigate('/gallery')}
-          className="text-stone-800 font-medium underline"
+          className="luxury-cta normal-case underline text-[color:var(--text)] font-medium tracking-[0.3em]"
         >
           Zpět do galerie
         </button>
