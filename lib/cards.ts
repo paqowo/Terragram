@@ -1,4 +1,3 @@
-
 import { Card } from '../types';
 
 export const CARDS: Card[] = [
@@ -8,10 +7,10 @@ export const CARDS: Card[] = [
     title: 'ZMĚNA',
     subtitle: 'přirozená proměna',
     affirmation: 'Přijímám změnu s pokorou…',
-    description: 'Tato karta ztělesňuje kvalitu změny, uvádí nás do pohybu. Abychom přinesli do života něco nového, je třeba udělat místo pro nové možnosti růstu. Vše co je strnulé a brzdí nás, je potřeba uvolnit, opustit paradigma a vykročit na novou cestu. Neboť změna je kořením života. Přijměte zasvěcení bleskem a zchlazení vodou, pokorně a bez hodnocení.',
+    body: 'Tato karta ztělesňuje kvalitu změny, uvádí nás do pohybu. Abychom přinesli do života něco nového, je třeba udělat místo pro nové možnosti růstu. Vše co je strnulé a brzdí nás, je potřeba uvolnit, opustit paradigma a vykročit na novou cestu. Neboť změna je kořením života. Přijměte zasvěcení bleskem a zchlazení vodou, pokorně a bez hodnocení.',
     shadow: 'Stín: Přílišné ulpívání až stagnace, strach ze ztráty nebo nových možností.',
     question: 'Jak se cítíte když se vše mění?',
-    accent: '#8B1A1A', // Sytá červená z Image 1
+    accent: '#8B1A1A',
     imagePath: '/assets/cards/zmena.webp'
   },
   {
@@ -20,10 +19,10 @@ export const CARDS: Card[] = [
     title: 'STAVITEL',
     subtitle: 'přirozený řád',
     affirmation: 'Vše se děje jak má…',
-    description: 'Každý projekt potřebuje stavitele, jeho umění je vnášet do tvorby přirozený řád. Vnímejte posloupnost vašeho života, hledejte opěrné body vaší existence (co-indicie), stabilitu v pohybu. Stavitel vám pomůže spojit to, co se vám zdá na první pohled nespojitelné. Objevte posvátnost svaté trojice.',
+    body: 'Každý projekt potřebuje stavitele, jeho umění je vnášet do tvorby přirozený řád. Vnímejte posloupnost vašeho života, hledejte opěrné body vaší existence (co-indicie), stabilitu v pohybu. Stavitel vám pomůže spojit to, co se vám zdá na první pohled nespojitelné. Objevte posvátnost svaté trojice.',
     shadow: 'Stín: Neschopnost vnímat přirozený řád, vměšování, přílišné hodnocení osobní cesty.',
     question: 'Jak se cítíte, když dáváte životu volný průběh?',
-    accent: '#A62626', // Červená z Image 17
+    accent: '#A62626',
     imagePath: '/assets/cards/stavitel.webp'
   },
   {
@@ -32,10 +31,10 @@ export const CARDS: Card[] = [
     title: 'VÁŠEŇ',
     subtitle: 'přirozená vitalita',
     affirmation: 'Přijímám svou vitální sílu…',
-    description: 'Vášeň je životní síla, transformující sakrální vitální energii do tvořivého pohybu. Je to proces proměny žhavého jádra Země, do tvořivých forem života. Místo posvátné milostné alchymie, rodící vitální sílu do tvorby. Pokud děláte s vášní cokoliv, vnášíte vitální energii do všech částí života. Posvátný tantrický tanec stvoření.',
+    body: 'Vášeň je životní síla, transformující sakrální vitální energii do tvořivého pohybu. Je to proces proměny žhavého jádra Země, do tvořivých forem života. Místo posvátné milostné alchymie, rodící vitální sílu do tvorby. Pokud děláte s vášní cokoliv, vnášíte vitální energii do všech částí života. Posvátný tantrický tanec stvoření.',
     shadow: 'Stín: Ztráta životní síly, neklid nebo nechuť dělat cokoliv, pokřivení sexuality.',
     question: 'V jakých oblastech svého života cítíte vášeň a v jakých ne?',
-    accent: '#8A2BE2', // Fialová z Image 2
+    accent: '#8A2BE2',
     imagePath: '/assets/cards/vasen.webp'
   },
   {
@@ -44,10 +43,10 @@ export const CARDS: Card[] = [
     title: 'TVOŘIVOST',
     subtitle: 'přirozená inspirace',
     affirmation: 'Jsem klíčící semínko tvořivosti, rostu ke světlu.',
-    description: 'Každý je obdařen darem tvořivosti, kvalitou projevu života. Uvnitř naší bytosti klíčí inspirace a vířivým pohybem vytváří vše potřebné for náš růst. Každým zrozením neseme semínka tvořivosti a pozorností jim dáváme sílu. Umožňujeme tak Duši se projevit.',
+    body: 'Každý je obdařen darem tvořivosti, kvalitou projevu života. Uvnitř naší bytosti klíčí inspirace a vířivým pohybem vytváří vše potřebné pro náš růst. Každým zrozením neseme semínka tvořivosti a pozorností jim dáváme sílu. Umožňujeme tak Duši se projevit.',
     shadow: 'Stín: Nechuť vytvářet hodnoty, závislost, neschopnost tvořit.',
     question: 'Hledáte inspiraci nebo realizaci?',
-    accent: '#D4AF37', // Zlatá z Image 4
+    accent: '#D4AF37',
     imagePath: '/assets/cards/tvorivost.webp'
   },
   {
@@ -56,10 +55,10 @@ export const CARDS: Card[] = [
     title: 'HOJNOST',
     subtitle: 'přijímání a dávání',
     affirmation: 'Jsem plynoucí řeka hojnosti.',
-    description: 'Zlatá střední cesta umožňuje, aby pohár hojnosti byl prázdný, ale přeci plný. Znamená to neulpívat na bohatství, ale ani v chudobě. Přijímání a dávání je potřeba uvést do rovnováhy, stejně jako při nádechu a výdechu. Opusťte obavy a přijměte do života řeku hojnosti.',
+    body: 'Zlatá střední cesta umožňuje, aby pohár hojnosti byl prázdný, ale přeci plný. Znamená to neulpívat na bohatství, ale ani v chudobě. Přijímání a dávání je potřeba uvést do rovnováhy, stejně jako při nádechu a výdechu. Opusťte obavy a přijměte do života řeku hojnosti.',
     shadow: 'Stín: Přílišný nadbytek nebo nedostatek.',
     question: 'Umíte přijímat nebo dávat dary? Cítíte se plný, nebo prázdný?',
-    accent: '#00AEEF', // Modrá z Image 5
+    accent: '#00AEEF',
     imagePath: '/assets/cards/hojnost.webp'
   },
   {
@@ -68,10 +67,10 @@ export const CARDS: Card[] = [
     title: 'DŮVĚRA',
     subtitle: 'přirozená ochrana',
     affirmation: 'Jsem pod ochranou a plně podporován.',
-    description: 'Ó posvátná pra-důvěro, nechť spočinu ve tvém lůnu. Ukonejši mé hledající srdce, jen skrze tvůj klid, najdu sama sebe. Důvěra je niterné souznění v rodinném kruhu domova a bezpečí. Jako ve vztahu maminky a dítěte, posvátného mateřství. Její dar umožňuje najít víru v sebe, ale i v ostatní.',
+    body: 'Ó posvátná pra-důvěro, nechť spočinu ve tvém lůnu. Ukonejši mé hledající srdce, jen skrze tvůj klid, najdu sama sebe. Důvěra je niterné souznění v rodinném kruhu domova a bezpečí. Jako ve vztahu maminky a dítěte, posvátného mateřství. Její dar umožňuje najít víru v sebe, ale i v ostatní.',
     shadow: 'Stín: Strach z opuštění, z toho, že nic nezvládnu. Přílišné připoutání, egocentrizmus.',
     question: 'Cítíte se podporováni? Věříte si?',
-    accent: '#4CAF50', // Zelená z Image 3
+    accent: '#4CAF50',
     imagePath: '/assets/cards/duvera.webp'
   },
   {
@@ -80,10 +79,10 @@ export const CARDS: Card[] = [
     title: 'SRDEČNOST',
     subtitle: 'přirozená otevřenost',
     affirmation: 'Otevřenost je posvátná služba, přímá cesta k poznání.',
-    description: 'Jsem posvátnou svatyní, kde požehnané je bytí… Tanec otevřeného srdce osvobozuje od spárů strachu a naplňuje vás pocitem sounáležitosti. Učí nás svobodné volbě bez podmínek a hodnocení. Učí nás přijímat do našich životů esenci lásky. Plamen svobodného srdce odkrývá to, co je za oponu iluzí a otevírá pravou cestu poznání.',
+    body: 'Jsem posvátnou svatyní, kde požehnané je bytí… Tanec otevřeného srdce osvobozuje od spárů strachu a naplňuje vás pocitem sounáležitosti. Učí nás svobodné volbě bez podmínek a hodnocení. Učí nás přijímat do našich životů esenci lásky. Plamen svobodného srdce odkrývá to, co je za oponu iluzí a otevírá pravou cestu poznání.',
     shadow: 'Stín: Uzavřené srdce je strach z ublížení, strach že jsem sám a nikdo mě nemá rád.',
     question: 'Jak se cítíte když mluvíte o svých pocitech? Co vás zraňuje?',
-    accent: '#E91E63', // Růžová z Image 14
+    accent: '#E91E63',
     imagePath: '/assets/cards/srdecnost.webp'
   },
   {
@@ -92,10 +91,10 @@ export const CARDS: Card[] = [
     title: 'SEBEREFLEXE',
     subtitle: 'přirozené ponaučení',
     affirmation: 'Přijímám ponaučení bez hodnocení.',
-    description: 'Stín zakrývá světlo, tím ukazuje naše nedostatky. Být k sobě upřímný je důležité, vždyť chybovat je přirozené. Ponaučení umožňuje zpracovat potřebné zkušenosti formující osobnost. Napomáhá nám zkrotit lstivé EGO a pokorně přijímat i chybná rozhodnutí.',
+    body: 'Stín zakrývá světlo, tím ukazuje naše nedostatky. Být k sobě upřímný je důležité, vždyť chybovat je přirozené. Ponaučení umožňuje zpracovat potřebné zkušenosti formující osobnost. Napomáhá nám zkrotit lstivé EGO a pokorně přijímat i chybná rozhodnutí.',
     shadow: 'Stín: Přílišné hodnocení, deprese, nepochopení.',
     question: 'Cítíte se jako dobrý, nebo špatný člověk? Jak často se hodnotíte?',
-    accent: '#0054A6', // Modrá z Image 11
+    accent: '#0054A6',
     imagePath: '/assets/cards/sebereflexe.webp'
   },
   {
@@ -104,10 +103,10 @@ export const CARDS: Card[] = [
     title: 'DISCIPLÍNA',
     subtitle: 'formování osobnosti',
     affirmation: 'Navracím kvality Duše do své osobnosti.',
-    description: 'Disciplína přirozeně formuje a zpevňuje naši osobnost, vyrovnává vnitřní a vnější tlak způsobený procesem růstu. Vytváří pružný obal – ochranu, která nebrání růstu, ale kultivuje. Usměrňuje osobní víru pro zvládnutí jakékoli životní zkoušky.',
+    body: 'Disciplína přirozeně formuje a zpevňuje naši osobnost, vyrovnává vnitřní a vnější tlak způsobený procesem růstu. Vytváří pružný obal – ochranu, která nebrání růstu, ale kultivuje. Usměrňuje osobní víru pro zvládnutí jakékoli životní zkoušky.',
     shadow: 'Stín: Askeze, přílišná urputnost, ostré chování.',
     question: 'Čemu dávám v životě pozornost? Dokážu pružně reagovat?',
-    accent: '#663399', // Fialová z Image 6
+    accent: '#663399',
     imagePath: '/assets/cards/disciplina.webp'
   },
   {
@@ -116,10 +115,10 @@ export const CARDS: Card[] = [
     title: 'DOKONČENÍ',
     subtitle: 'funkčnost',
     affirmation: 'Jsem součástí procesu, dokončuji v pravém okamžiku.',
-    description: 'Aby mohlo cokoliv fungovat, je potřeba to dokončit. Dokončení je silou oživující jakýkoli projekt. Je zábleskem na konci určité cesty, je posvátným završením. Jako umělec, který posledním tahem oživuje své dílo. Je to přirozený proces bez nátlaku a hodnocení. Dokončením se uzavírá určitá část procesu, ale tím to nekončí…',
+    body: 'Aby mohlo cokoliv fungovat, je potřeba to dokončit. Dokončení je silou oživující jakýkoli projekt. Je zábleskem na konci určité cesty, je posvátným završením. Jako umělec, který posledním tahem oživuje své dílo. Je to přirozený proces bez nátlaku a hodnocení. Dokončením se uzavírá určitá část procesu, ale tím to nekončí…',
     shadow: 'Stín: Neschopnost něco dokončit, strach z oživení, z funkčnosti. Vynucování výsledku nebo prokrastinace.',
     question: 'Poznáte, kdy je všechno potřebné hotovo?',
-    accent: '#0071BC', // Modrá z Image 18
+    accent: '#0071BC',
     imagePath: '/assets/cards/dokonceni.webp'
   },
   {
@@ -128,10 +127,10 @@ export const CARDS: Card[] = [
     title: 'INTUICE',
     subtitle: 'jemnocit, empatie',
     affirmation: 'V jemnosti nacházím moudrost a pokoru.',
-    description: 'Schopnost vyladění na pocity srdce. Vcítění naslouchá emocím, učíme se rozlišovat, co je pro nás příjemné a nepříjemné. Sounáležitost harmonizuje myšlenkové pochody, spojuje mysl ze srdcem. Vyrovnáním nacházíme napojení, pocity, sny a vize. Objasňující vše, co je pro vás důležité.',
+    body: 'Schopnost vyladění na pocity srdce. Vcítění naslouchá emocím, učíme se rozlišovat, co je pro nás příjemné a nepříjemné. Sounáležitost harmonizuje myšlenkové pochody, spojuje mysl ze srdcem. Vyrovnáním nacházíme napojení, pocity, sny a vize. Objasňující vše, co je pro vás důležité.',
     shadow: 'Stín: Blok mezi myslí a srdce, neschopnost vcítění a jemnosti.',
     question: 'Vnímáte pocity druhých? Máte nějaké předtuchy?',
-    accent: '#FF8C00', // Oranžová z Image 16
+    accent: '#FF8C00',
     imagePath: '/assets/cards/intuice.webp'
   },
   {
@@ -140,10 +139,10 @@ export const CARDS: Card[] = [
     title: 'OSVOBOZENÍ',
     subtitle: 'záblesk osvícení',
     affirmation: 'Rozšiřuji své vědomí, opouštím strach z neznáma.',
-    description: 'Lpěním na identitě, vyživujeme Ego. Opusťme tedy hodnocení sebe sama a pomyslně překročit osobní hranice a spatříte pravé Já. Překonáním těchto pomyslných hranic, se otevírají nové pohledy na život. Záblesk osvícení rozšiřuje vědomí a tím prohlubuje zkušenost prožitku pravého Já. Kapitulace Ega.',
+    body: 'Lpěním na identitě, vyživujeme Ego. Opusťme tedy hodnocení sebe sama a pomyslně překročme osobní hranice a spatříte pravé Já. Překonáním těchto pomyslných hranic, se otevírají nové pohledy na život. Záblesk osvícení rozšiřuje vědomí a tím prohlubuje zkušenost prožitku pravého Já. Kapitulace Ega.',
     shadow: 'Stín: Strach z neznáma, strach ze ztráty identity, strach ze smrti.',
     question: 'Dokážete opustit svojí identitu, bojíte se smrti?',
-    accent: '#483D8B', // Tmavě fialová z Image 9
+    accent: '#483D8B',
     imagePath: '/assets/cards/osvobozeni.webp'
   },
   {
@@ -152,10 +151,10 @@ export const CARDS: Card[] = [
     title: 'SJEDNOCENÍ',
     subtitle: 'návrat Duše',
     affirmation: 'To co je nahoře, je také dole.',
-    description: 'Vím kdo jsem, znám své poselství, jsem součást velkého společenství. Už nejsem oddělen od vědění, ale plně integrován v planetárním vědomí. Duše byla oddělena od zdroje a sjednocení ji navrací na právoplatné místo ve vývoji. Rázem člověk přestane hledat cestu, pochopí že on je cesta. Je samotným věděním, moudrostí Duše.',
+    body: 'Vím kdo jsem, znám své poselství, jsem součást velkého společenství. Už nejsem oddělen od vědění, ale plně integrován v planetárním vědomí. Duše byla oddělena od zdroje a sjednocení ji navrací na právoplatné místo ve vývoji. Rázem člověk přestane hledat cestu, pochopí že on je cesta. Je samotným věděním, moudrostí Duše.',
     shadow: 'Stín: Neschopnost se integrovat, bagatelizace Duše, lpění na cestě samotné.',
     question: 'Představte si, co vám řekne Duše, až jí doopravdy potkáte?',
-    accent: '#B8860B', // Zlatohnědá z Image 13
+    accent: '#B8860B',
     imagePath: '/assets/cards/sjednoceni.webp'
   },
   {
@@ -164,10 +163,11 @@ export const CARDS: Card[] = [
     title: 'JÁ JSEM',
     subtitle: 'vědomé bytí',
     affirmation: 'Za myšlenkou, za emocí, je skutečné Já, vědomé bytí.',
-    description: 'Uvnitř nás najdeme pokojné bytí, základnu života, místo kde se odráží opravdové „Já“. Posvátný prostor kde nacházíme svojí jedinečnost, skutečné bytí. Prvotní já bez iluze, bez světské masky osobní identity.',
+    body: 'Uvnitř nás najdeme pokojné bytí, základnu života, místo kde se odráží opravdové „Já“. Posvátný prostor kde nacházíme svojí jedinečnost, skutečné bytí. Prvotní já bez iluze, bez světské masky osobní identity.',
     shadow: 'Stín: Nevědomí, popírání vědomé existence.',
     question: 'Kdo jsem, když odložím všechny své životní role?',
-    accent: '#FF7F50', // Korálová z Image 15
+    accent: '#FF7F50',
+    isSupplementary: true,
     imagePath: '/assets/cards/ja-jsem.webp'
   },
   {
@@ -176,10 +176,11 @@ export const CARDS: Card[] = [
     title: 'NOVÝ VĚK',
     subtitle: 'otevřené vědomí',
     affirmation: 'Jsem květina nového světa, rostu tvou pozorností.',
-    description: 'Uvolni paradigma starého světa, otevři se novým možnostem. Zanechej strnulost dávných věků, přivítej nové poznání. Jsme novátoři, průzkumníci nový světů, objevitelé nepoznaného.',
+    body: 'Uvolni paradigma starého světa, otevři se novým možnostem. Zanechej strnulost dávných věků, přivítej nové poznání. Jsme novátoři, průzkumníci nový světů, objevitelé nepoznaného.',
     shadow: 'Stín: Dogma starého světa, strnulost vědomí, nechuť měnit zažité.',
     question: 'Jakou novou kvalitu chci vnést do kolektivního vědomí?',
-    accent: '#DAA520', // Zlatá z Image 10
+    accent: '#DAA520',
+    isSupplementary: true,
     imagePath: '/assets/cards/novy-vek.webp'
   },
   {
@@ -188,8 +189,11 @@ export const CARDS: Card[] = [
     title: 'SPOLUPRÁCE',
     subtitle: 'společný tanec',
     affirmation: 'Společně tvoříme více, než bychom dokázali sami.',
-    description: 'Spolupráce znamená společné úsilí zaměřené na dosažení prospěchu všech, kteří se na něm podílejí. Svobodná spolupráce vyrovnává vesmírnou dualitu a umožňuje Božskému JÁ přijmout celistvé poznání.',
-    accent: '#2E8B57', // Zelená z loga Image 7
+    body: 'Spolupráce znamená společné úsilí zaměřené na dosažení prospěchu všech, kteří se na něm podílejí. Svobodná spolupráce vyrovnává vesmírnou dualitu a umožňuje Božskému JÁ přijmout celistvé poznání.',
+    shadow: '',
+    question: '',
+    accent: '#2E8B57',
+    isSupplementary: true,
     imagePath: '/assets/cards/spoluprace.webp'
   }
 ];
