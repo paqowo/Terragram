@@ -23,7 +23,11 @@ const CardDetail: React.FC = () => {
     );
   }
 
-  return <CardDetailView card={card} />;
+  return (
+    <>
+      <CardDetailView card={card} />
+    </>
+  );
 };
 
 export default CardDetail;

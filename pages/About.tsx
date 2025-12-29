@@ -64,62 +64,92 @@ const About: React.FC = () => {
   const activeContent = useMemo(() => (activeTile !== null ? TILES[activeTile] : null), [activeTile]);
 
   return (
-    <div className="min-h-screen px-6 pt-20 pb-24">
-      <div className="about-section space-y-10">
-        <div className="space-y-6 text-center">
-          <p className="font-light text-[13px] tracking-[0.5em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100 mb-2">o terragramech</p>
+    <div className="min-h-screen px-6 pt-20 pb-24 flex flex-col items-center">
+      <div className="about-section w-full max-w-5xl space-y-12">
+        
+        {/* Header Section */}
+        <header className="space-y-6 text-center">
+          <p className="font-light text-[13px] tracking-[0.5em] text-[color:var(--muted)] lowercase animate-in fade-in slide-in-from-bottom-2 delay-100">
+            o terragramech
+          </p>
           <div className="space-y-4">
-            <h1 className="text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Cesta k vnitřnímu světlu</h1>
-            <h2 className="text-3xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h2>
+            <h1 className="text-3xl md:text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200 uppercase">
+              Cesta k vnitřnímu světlu
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-serif tracking-[0.15em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-300 uppercase opacity-80">
+              Tichý iniciační prostor
+            </h2>
           </div>
-          <div className="divider-gold w-full max-w-xs mx-auto animate-in fade-in slide-in-from-bottom-2 delay-300"></div>
-          <p className="max-w-xl mx-auto text-balance text-[color:var(--muted)] leading-relaxed text-sm animate-in fade-in slide-in-from-bottom-2 delay-400">Každý Terragram je zrcadlem, ve kterém se odráží hloubka Vaší podstaty. Nespěchejte. Nechte se vést tichým vjemem k symbolu, který si Vás přitáhne. Právě v něm se skrývá princip, který je připraven k rozvinutí.</p>
-        </div>
+          <div className="divider-gold w-full max-w-xs mx-auto animate-in fade-in slide-in-from-bottom-2 delay-400 opacity-30"></div>
+          <p className="max-w-2xl mx-auto text-balance text-[color:var(--muted)] leading-relaxed text-sm md:text-base animate-in fade-in slide-in-from-bottom-2 delay-500 font-light italic">
+            „Každý Terragram je zrcadlem, ve kterém se odráží hloubka Vaší podstaty. Nespěchejte. Nechte se vést tichým vjemem k symbolu, který si Vás přitáhne. Právě v něm se skrývá princip, který je připraven k rozvinutí.“
+          </p>
+        </header>
 
-        <div className={`about-tiles-grid ${activeTile !== null ? 'is-dimmed' : ''}`}>
+        {/* Tiles Grid */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-opacity duration-500 ${activeTile !== null ? 'opacity-20 pointer-events-none' : 'opacity-100'}`}>
           {TILES.map((tile, index) => (
             <article
               key={tile.title}
-              className={`about-tile lux-shimmer ${index % 2 !== 0 ? 'md:mt-12' : ''}`}
+              className={`about-tile surface-card lux-shimmer p-8 rounded-[32px] cursor-pointer hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center min-h-[180px] group`}
               onClick={() => setActiveTile(index)}
               role="button"
               tabIndex={0}
-              onKeyDown={event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  setActiveTile(index);
-                }
-              }}
             >
-              <div>
-                <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{tile.title}</h3>
-                <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
-                <p className="about-tile-intro animate-in fade-in slide-in-from-bottom-2 delay-300">{tile.intro}</p>
-              </div>
+              <h3 className="font-serif text-xl tracking-[0.15em] uppercase text-[color:var(--text)] mb-4 group-hover:text-[color:var(--gold)] transition-colors">
+                {tile.title}
+              </h3>
+              <div className="divider-gold w-12 mb-4 opacity-20 group-hover:w-full group-hover:opacity-40 transition-all duration-700"></div>
+              <p className="text-[color:var(--muted)] text-sm tracking-wide leading-relaxed">
+                {tile.intro}
+              </p>
             </article>
           ))}
         </div>
       </div>
 
+      {/* Detail Modal Overlay */}
       {activeContent && (
-        <div className="about-modal-overlay" onClick={() => { setActiveTile(null); }}>
-          <div className="about-modal-card surface-card relative" onClick={event => event.stopPropagation()} role="dialog" aria-modal="true">
-            <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{activeContent.title}</h3>
-            <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
-            {activeContent.body.split('\n\n').map((paragraph, index) => (
-              <p key={index} className={`animate-in fade-in slide-in-from-bottom-2 delay-${300 + index * 100}`}>
-                {paragraph}
-              </p>
-            ))}
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-500" 
+          onClick={() => setActiveTile(null)}
+        >
+          <div 
+            className="surface-card relative w-full max-w-2xl max-h-[85vh] overflow-y-auto p-8 md:p-12 rounded-[40px] shadow-2xl animate-in zoom-in-95 duration-300" 
+            onClick={event => event.stopPropagation()} 
+            role="dialog" 
+            aria-modal="true"
+          >
+            <h3 className="font-serif text-2xl md:text-3xl tracking-[0.2em] text-[color:var(--text)] uppercase mb-6">
+              {activeContent.title}
+            </h3>
+            
+            <div className="divider-gold w-full mb-8 opacity-30"></div>
+            
+            <div className="space-y-6">
+              {activeContent.body.split('\n\n').map((paragraph, index) => (
+                <p 
+                  key={index} 
+                  className="text-[color:var(--text)] text-sm md:text-base leading-relaxed opacity-100 font-light"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {/* Close Button X */}
             <button
-              className="absolute top-4 right-4 text-gold-soft hover:text-white transition-colors duration-300 text-lg"
-              onClick={() => { setActiveTile(null); }}
+              className="absolute top-6 right-8 text-[color:var(--muted)] hover:text-[color:var(--text)] transition-colors text-3xl font-light"
+              onClick={() => setActiveTile(null)}
+              aria-label="Zavřít"
             >
               &times;
             </button>
+
+            {/* Bottom Close Button */}
             <button
-              className="mt-8 font-serif uppercase text-xs tracking-[0.4em] border border-gold-soft py-2 px-4 hover:opacity-75 transition-opacity duration-300 mx-auto block"
-              onClick={() => { setActiveTile(null); }}
+              className="mt-12 font-serif uppercase text-[10px] tracking-[0.5em] border border-[color:var(--gold-soft)] py-3 px-10 hover:bg-[color:var(--gold-soft)] hover:text-white transition-all duration-500 mx-auto block text-[color:var(--text)]"
+              onClick={() => setActiveTile(null)}
             >
               ZAVŘÍT
             </button>

@@ -12,7 +12,7 @@ const Gallery: React.FC = () => {
         <h1 className="text-2xl font-light tracking-[0.1em] text-[color:var(--text)] uppercase text-balance">
           Galerie Terragramů
         </h1>
-        <p className="text-[color:var(--muted)] text-[11px] tracking-[0.15em] max-w-3xl mx-auto whitespace-nowrap overflow-hidden text-ellipsis text-balance">
+        <p className="font-serif text-[11px] tracking-[0.2em] opacity-60 uppercase max-w-3xl mx-auto text-balance md:whitespace-nowrap">
           Zrcadlo poznání. Symbol, který nepromlouvá k mysli, ale k tichu uvnitř Vás. Nechte se vést rezonancí tvarů.
         </p>
       </header>

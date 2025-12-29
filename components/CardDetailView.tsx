@@ -93,10 +93,6 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
             )}
           </div>
         </div>
-        <div className="mt-6 px-4 text-[10px] text-[color:var(--muted)] tracking-[0.1em] md:tracking-[0.3em] uppercase text-center whitespace-nowrap overflow-hidden text-ellipsis watermark-text">
-          Terragram je vědomý princip • Symbol světla je jeho obraz • Aktivační klíč vzniká
-          ve chvíli, kdy se tento princip v člověku probudí.
-        </div>
       </div>
     </div>
   );

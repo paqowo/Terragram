@@ -21,7 +21,7 @@ const TopBar: React.FC = () => {
       </button>
       <div className="absolute left-1/2 -translate-x-1/2 hidden sm:block"> {/* Hidden on small screens */}
         <Link to="/">
-            <span className="font-serif font-medium tracking-[0.3em] text-[color:var(--text)] text-sm uppercase whitespace-nowrap">TERRAGRAMY</span>
+            <span className="font-serif font-medium tracking-[0.3em] text-[color:var(--text)] text-sm uppercase whitespace-nowrap hover:opacity-70 transition-opacity duration-300">TERRAGRAMY</span>
         </Link>
       </div>
       <Link

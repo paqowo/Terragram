@@ -88,7 +88,7 @@ const DailyReveal: React.FC = () => {
             Aktivovat klíč
           </button>
 
-          <p className="max-w-xs text-center text-[color:var(--muted)] text-xs leading-relaxed tracking-wide">
+          <p className="font-serif text-[11px] tracking-[0.2em] opacity-60 uppercase text-center text-balance md:whitespace-nowrap mt-12 pb-10">
             Ztište svou mysl a nechte svou pozornost spočinout v nitru. V tomto tichu se symbol stává klíčem k Vašemu Poznání.
           </p>
         </div>

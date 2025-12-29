@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[color:var(--bg)] transition-colors duration-700">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-transparent transition-colors duration-700">
       
       {/* 1. THEME TOGGLE - Úplně mimo hlavní tok (Floating) */}
       <div className="absolute top-8 right-8 z-50">
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* 2. MAIN CONTENT - Dokonale vycentrovaný */}
-      <main className="flex flex-col items-center justify-center min-h-screen px-6 space-y-16 animate-in fade-in duration-1000">
+      <main className="min-h-screen flex flex-col items-center justify-center px-6 space-y-16 animate-in fade-in duration-1000">
         
         {/* LOGO SECTION */}
         <div className="lux-shimmer p-4 rounded-full transition-transform duration-700 hover:scale-105">
@@ -105,12 +105,7 @@ const Home: React.FC = () => {
         </div>
       </main>
       
-      {/* 3. FOOTER - Také absolutně dole */}
-      <div className="absolute bottom-8 w-full text-center">
-        <p className="footer-text opacity-30 text-[9px] tracking-[0.6em]">
-          © {new Date().getFullYear()} TERRAGRAMY
-        </p>
-      </div>
+
 
     </div>
   );
