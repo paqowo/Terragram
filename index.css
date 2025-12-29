@@ -508,19 +508,6 @@ button {
   animation: breathe 4s ease-in-out infinite;
 }
 
-.animate-breathe {
-  animation: breathe 4s ease-in-out infinite;
-}
-
-/* Remove animate-pulse-fade */
-/* @keyframes pulse-fade {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1.0; }
-}
-.animate-pulse-fade {
-  animation: pulse-fade 2s ease-in-out infinite;
-} */
-
 @keyframes symbol-pulse {
   0%, 100% {
     transform: scale(0.9);
