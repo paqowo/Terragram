@@ -7,10 +7,10 @@ html { scroll-behavior: smooth; }
 @tailwind utilities;
 
 :root {
-  --bg: #F1ECE4;
-  --surface: #FBF9F6;
-  --surface-2: #F3EEE6;
-  --text: #2B2622;
+  --bg: #F2F0E9;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-2: #F3EEE6; /* Keeping this as is, for now */
+  --text: #383530;
   --muted: #7A726C;
   --gold: #C9A24D;
   --gold-soft: rgba(201, 162, 77, 0.22);
@@ -20,7 +20,7 @@ html { scroll-behavior: smooth; }
   --ambient-accent: #C9A24D; /* Default value */
   --ambient-accent-rgb: 201, 162, 77; /* Default value */
   --gold-rgb: 201, 162, 77; /* RGB equivalent of #C9A24D */
-  --surface-rgb: 251, 249, 246; /* RGB equivalent of #FBF9F6 */
+  --surface-rgb: 255, 255, 255; /* RGB equivalent of #FFFFFF, to be used with alpha */
   --surface-2-rgb: 243, 238, 230; /* RGB equivalent of #F3EEE6 */
 }
 
@@ -40,12 +40,12 @@ body {
   min-height: 100vh;
   margin: 0;
   padding-bottom: 6rem; /* Equivalent to Tailwind's pb-24 */
-  background-color: #F2F0E9;
+  background-color: var(--bg);
   background-image:
-    radial-gradient(circle at center, #FBF9F6 0%, #EBE7DE 100%),
+    radial-gradient(circle at center, var(--surface) 0%, var(--bg) 100%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed;
-  color: #383530;
+  color: var(--text);
 }
 
 body.dark {
@@ -404,10 +404,11 @@ button {
 }
 
 .glass {
-  backdrop-filter: blur(12px) saturate(180%);
-  background-color: rgba(245, 245, 240, 0.7);
-  border-top: 1px solid rgba(201, 162, 77, 0.3);
-  border-bottom: 1px solid rgba(201, 162, 77, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+  background-color: transparent;
+  border-bottom: 1px solid var(--gold-soft);
+  border-top: none; /* Remove previous border-top if any */
 }
 
 .shadow-aspect-card {
@@ -496,4 +497,53 @@ button {
 
 ::selection {
   background: rgba(var(--ambient-accent-rgb), 0.2);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1.0); }
+  50% { transform: scale(1.015); }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Remove animate-pulse-fade */
+/* @keyframes pulse-fade {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1.0; }
+}
+.animate-pulse-fade {
+  animation: pulse-fade 2s ease-in-out infinite;
+} */
+
+@keyframes symbol-pulse {
+  0%, 100% {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 5px rgba(var(--gold-rgb), 0.2));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(var(--gold-rgb), 0.6));
+  }
+}
+.animate-symbol-pulse {
+  animation: symbol-pulse 4s ease-in-out infinite;
+}
+
+@keyframes pupil-pulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.7; }
+  50% { transform: scale(1.0); opacity: 1.0; }
+}
+.animate-pupil-pulse {
+  animation: pupil-pulse 1.5s ease-in-out infinite;
+}
+
+.ritual-key-icon {
+    filter: drop-shadow(0 0 10px rgba(var(--gold-rgb), 0.4));
+    animation: symbol-pulse 4s ease-in-out infinite;
 }

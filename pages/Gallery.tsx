@@ -1,6 +1,8 @@
 import React from 'react';
 import { CARDS } from '../lib/cards';
 import CardTile from '../components/CardTile';
+
+const Gallery: React.FC = () => {
   const mainCards = CARDS.filter(card => !['ja-jsem', 'novy-vek', 'spoluprace'].includes(card.slug));
   const supplementaryCards = CARDS.filter(card => ['ja-jsem', 'novy-vek', 'spoluprace'].includes(card.slug));
 

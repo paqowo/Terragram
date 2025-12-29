@@ -32,7 +32,7 @@ const DailyReveal: React.FC = () => {
       {!revealed && (
         <div
           onClick={handleReveal}
-          className={`relative w-full max-w-sm aspect-[9/16] rounded-3xl cursor-pointer
+          className={`group relative w-full max-w-sm aspect-[9/16] rounded-3xl cursor-pointer lux-shimmer overflow-hidden animate-breathe hover:animate-none group-hover:-translate-y-2
                       transition-all duration-700 ease-in-out
                       ${isAnimatingOut ? 'animate-out fade-out scale-95' : 'animate-in fade-in slide-in-from-bottom-5 duration-1000'}`}
         >
@@ -40,20 +40,30 @@ const DailyReveal: React.FC = () => {
           <div className="absolute inset-0 w-full h-full rounded-3xl surface-card" />
 
           {/* Ambient Glow */}
-          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-[color:var(--ambient-accent)]/50 blur-3xl animate-pulse-slow rounded-full" />
+          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-[color:var(--ambient-accent)]/50 blur-3xl animate-pulse-slow rounded-full
+                      transition-all duration-500 group-hover:opacity-100 group-hover:scale-110" />
           
           {/* Content: Centered Logo and Text */}
           <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
-            <div className="flex-grow flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <img
                 src="/logo.webp"
                 alt="TerraGram symbol světla"
                 className="w-4/5 h-auto object-contain drop-shadow-lg"
               />
             </div>
-            <p className="font-serif text-sm tracking-[0.2em] text-center text-[color:var(--muted)]">
-              Dovolte světlu promluvit
+            <p className="font-serif text-lg tracking-widest text-center text-[color:var(--muted)] opacity-70">
+              Nechť Světlo promluví
             </p>
+            {/* Ritual Key Icon */}
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ritual-key-icon mt-4">
+              {/* Outer Eye/Diamond shape */}
+              <path d="M12 4L19 12L12 20L5 12L12 4Z" stroke="var(--gold)" strokeWidth="0.5" opacity="0.3"/>
+              {/* Inner Eye / Portal */}
+              <path d="M8 12C8 12 10 8 12 8C14 8 16 12 16 12C16 12 14 16 12 16C10 16 8 12 8 12Z" stroke="var(--gold)" strokeWidth="1" strokeLinecap="round"/>
+              {/* Central pupil of light */}
+              <circle cx="12" cy="12" r="1.5" fill="var(--gold)" className="pupil-glow animate-pupil-pulse"/>
+            </svg>
           </div>
         </div>
       )}

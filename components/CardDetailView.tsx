@@ -82,11 +82,11 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
 
             {/* Question Section */}
             {card.question && (
-              <section className="surface-card rounded-2xl p-6 text-center mt-8">
-                <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
+              <section className="bg-[color:var(--surface)] border border-[color:var(--gold-soft)] rounded-2xl p-4 text-center mt-8">
+                <h4 className="text-[10px] font-bold tracking-[0.4em] text-[color:var(--muted)] uppercase mb-4">
                   Otázka k zamyšlení
                 </h4>
-                <p className="text-[color:var(--text)] text-xl md:text-3xl leading-snug font-serif tracking-tight text-balance">
+                <p className="text-[color:var(--text)] font-serif italic font-medium leading-relaxed text-balance text-lg md:text-xl">
                   {card.question}
                 </p>
               </section>

@@ -67,7 +67,7 @@ const About: React.FC = () => {
     <div className="min-h-screen px-6 pt-20 pb-24">
       <div className="about-section space-y-10">
         <div className="space-y-6 text-center">
-          <p className="font-light text-[10px] tracking-[0.5em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">o terragramech</p>
+          <p className="font-light text-[13px] tracking-[0.5em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100 mb-2">o terragramech</p>
           <div className="space-y-4">
             <h1 className="text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Cesta k vnitřnímu světlu</h1>
             <h2 className="text-3xl font-serif tracking-[0.2em] text-[color:var(--text)] text-shadow-paper animate-in fade-in slide-in-from-bottom-2 delay-200">Tichý iniciační prostor</h2>
