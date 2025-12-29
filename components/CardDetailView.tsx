@@ -69,14 +69,16 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
 
           <div className="space-y-6">
             {/* Shadow Box */}
-            <section className="bg-[color:var(--surface)]/5 backdrop-filter backdrop-blur-md rounded-2xl p-6 mt-8">
-              <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
-                Stínový aspekt
-              </h4>
-              <p className="text-[color:var(--muted)] text-base italic leading-relaxed">
-                {shadowText}
-              </p>
-            </section>
+            {card.shadow && (
+              <section className="bg-[color:var(--surface)]/5 backdrop-filter backdrop-blur-md rounded-2xl p-6 mt-8">
+                <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
+                  Stínový aspekt
+                </h4>
+                <p className="text-[color:var(--muted)] text-base italic leading-relaxed">
+                  {shadowText}
+                </p>
+              </section>
+            )}
 
             {/* Question Section */}
             {card.question && (

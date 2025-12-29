@@ -1,10 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { CARDS } from '../lib/cards';
 import CardTile from '../components/CardTile';
-import { ZenSoundContext } from '../App';
-
-const Gallery: React.FC = () => {
-  const { playZenPing } = useContext(ZenSoundContext)!;
   const mainCards = CARDS.filter(card => !['ja-jsem', 'novy-vek', 'spoluprace'].includes(card.slug));
   const supplementaryCards = CARDS.filter(card => ['ja-jsem', 'novy-vek', 'spoluprace'].includes(card.slug));
 
@@ -24,7 +20,6 @@ const Gallery: React.FC = () => {
           <CardTile 
             key={card.id} 
             card={card} 
-            onClick={() => playZenPing()}
             style={{ animationDelay: `${index * 80}ms` }}
             className="animate-in fade-in slide-in-from-bottom-2 duration-700"
           />
@@ -42,7 +37,6 @@ const Gallery: React.FC = () => {
           <CardTile 
             key={card.id} 
             card={card} 
-            onClick={() => playZenPing()}
             style={{ animationDelay: `${index * 80}ms` }}
             className="animate-in fade-in slide-in-from-bottom-2 duration-700"
           />
@@ -53,5 +47,3 @@ const Gallery: React.FC = () => {
 };
 
 export default Gallery;
-
-

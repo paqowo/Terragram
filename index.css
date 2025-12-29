@@ -24,15 +24,34 @@ html { scroll-behavior: smooth; }
   --surface-2-rgb: 243, 238, 230; /* RGB equivalent of #F3EEE6 */
 }
 
+:root.dark {
+  --bg: #0A0A0C;
+  --surface: rgba(24, 24, 30, 0.75);
+  --text: #E5E5E5;
+  --muted: #9494A0;
+  --gold: #D1D1D1;
+  /* Dark mode specific RGB values for consistency */
+  --gold-rgb: 209, 209, 209; /* RGB equivalent of #D1D1D1 */
+  --surface-rgb: 24, 24, 30; /* RGB equivalent of #18181E */
+  --surface-2-rgb: 24, 24, 30; /* Using same for surface-2 in dark mode */
+}
+
 body {
   min-height: 100vh;
   margin: 0;
+  padding-bottom: 6rem; /* Equivalent to Tailwind's pb-24 */
   background-color: #F2F0E9;
   background-image:
     radial-gradient(circle at center, #FBF9F6 0%, #EBE7DE 100%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed;
   color: #383530;
+}
+
+body.dark {
+  background-color: #0A0A0C; /* Dark background */
+  background-image: radial-gradient(circle at center, #111116 0%, #050507 100%);
+  color: var(--text); /* Use dark mode text color */
 }
 
 h1,
@@ -52,7 +71,7 @@ button {
 }
 
 .surface-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+  background: linear-gradient(145deg, rgba(var(--surface-rgb), 0.9), rgba(var(--surface-rgb), 0.4));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* For Safari */
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -72,7 +91,7 @@ button {
 }
 
 .surface-card-soft {
-  background: linear-gradient(180deg, #ffffff 0%, #F8F4EE 100%);
+  background: linear-gradient(180deg, rgba(var(--surface-rgb), 1) 0%, rgba(var(--surface-rgb), 0.95) 100%);
   border: 1px solid var(--gold-soft);
   box-shadow:
     0 25px 50px rgba(43, 38, 34, 0.05),

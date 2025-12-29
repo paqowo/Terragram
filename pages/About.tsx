@@ -1,5 +1,4 @@
-import React, { useMemo, useState, useContext } from 'react';
-import { ZenSoundContext } from '../App';
+import React, { useMemo, useState } from 'react';
 
 const TILES = [
   {
@@ -61,7 +60,6 @@ V určitém bodě ticho převáží nad otázkami. Člověk přestává hledat c
 ];
 
 const About: React.FC = () => {
-  const { playZenPing } = useContext(ZenSoundContext)!;
   const [activeTile, setActiveTile] = useState<number | null>(null);
   const activeContent = useMemo(() => (activeTile !== null ? TILES[activeTile] : null), [activeTile]);
 
@@ -104,7 +102,7 @@ const About: React.FC = () => {
       </div>
 
       {activeContent && (
-        <div className="about-modal-overlay" onClick={() => { playZenPing(); setActiveTile(null); }}>
+        <div className="about-modal-overlay" onClick={() => { setActiveTile(null); }}>
           <div className="about-modal-card surface-card relative" onClick={event => event.stopPropagation()} role="dialog" aria-modal="true">
             <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{activeContent.title}</h3>
             <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
@@ -115,13 +113,13 @@ const About: React.FC = () => {
             ))}
             <button
               className="absolute top-4 right-4 text-gold-soft hover:text-white transition-colors duration-300 text-lg"
-              onClick={() => { playZenPing(); setActiveTile(null); }}
+              onClick={() => { setActiveTile(null); }}
             >
               &times;
             </button>
             <button
               className="mt-8 font-serif uppercase text-xs tracking-[0.4em] border border-gold-soft py-2 px-4 hover:opacity-75 transition-opacity duration-300 mx-auto block"
-              onClick={() => { playZenPing(); setActiveTile(null); }}
+              onClick={() => { setActiveTile(null); }}
             >
               ZAVŘÍT
             </button>

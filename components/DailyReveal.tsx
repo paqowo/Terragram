@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import CardDetailView from './CardDetailView';
 import { Card } from '../types';
 import { getDailyCardSlug } from '../lib/daily';
 import { getCardBySlug } from '../lib/cards';
-import { ZenSoundContext } from '../App';
 
 const DailyReveal: React.FC = () => {
-  const { playZenPing } = useContext(ZenSoundContext)!;
   const [revealed, setRevealed] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [card, setCard] = useState<Card | null>(null);
@@ -19,7 +17,6 @@ const DailyReveal: React.FC = () => {
 
   const handleReveal = () => {
     if (isAnimatingOut || revealed) return;
-    playZenPing(); // Trigger sound on button click
     setIsAnimatingOut(true);
     setTimeout(() => {
       setRevealed(true);
