@@ -37,7 +37,7 @@ const DailyReveal: React.FC = () => {
                       ${isAnimatingOut ? 'animate-out fade-out scale-95' : 'animate-in fade-in slide-in-from-bottom-5 duration-1000'}`}
         >
           {/* Glass-Stone Effect Container */}
-          <div className="absolute inset-0 w-full h-full rounded-3xl backdrop-blur-xl bg-white/40 border border-white/20 shadow-2xl" />
+          <div className="absolute inset-0 w-full h-full rounded-3xl surface-card" />
 
           {/* Ambient Glow */}
           <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-orange-400/50 blur-3xl animate-pulse-slow rounded-full" />

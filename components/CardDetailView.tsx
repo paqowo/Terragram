@@ -29,29 +29,35 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
 
   return (
     <div className="w-full max-w-lg mx-auto pb-20 px-6 pt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]">
-      <div className="flex flex-col items-center text-center space-y-12">
-        
-        <blockquote className="italic text-[color:var(--text)]/70 text-2xl leading-relaxed text-center max-w-md">
-          &ldquo;{card.affirmation}&rdquo;
-        </blockquote>
+      <div className="flex flex-col items-center text-center space-y-8">
+        {/* Top (The Spirit): Subtitle */}
+        <p className="text-[10px] tracking-[0.4em] uppercase opacity-60">
+          {card.subtitle}
+        </p>
 
-        <div className="relative group w-full flex justify-center items-center h-56">
+        {/* Center (The Soul): SymbolSVG with glow */}
+        <div className="relative group w-full flex justify-center items-center h-56 symbol-glow-effect">
           <div
-            className="absolute inset-0 blur-[120px] animate-pulse-aura"
-            style={{ backgroundColor: card.accent }}
+            className="absolute inset-0 animate-pulse-aura"
+            style={{ backgroundColor: card.accent, filter: 'blur(40px)' }} // Rely on symbol-glow-effect's blur, but keep inline for accent color
           />
-          <div className="relative w-48 h-48 sm:w-32 sm:h-32 animate-float z-10 symbol-glow">
+          <div className="relative w-48 h-48 sm:w-32 sm:h-32 animate-float z-10">
             <SymbolSVG slug={card.slug} color={card.accent} />
           </div>
         </div>
 
-        <div className="space-y-3">
-          <h1 className="text-4xl font-serif tracking-[0.2em] text-[color:var(--text)] uppercase animate-in fade-in slide-in-from-bottom-2 delay-100">
+        {/* Bottom (The Body) */}
+        <div className="space-y-2">
+          {/* Title */}
+          <h1 className="text-4xl font-serif tracking-widest text-shadow-paper uppercase">
             {card.title}
           </h1>
-          <p className="text-[color:var(--muted)] text-sm italic font-medium tracking-wide animate-in fade-in slide-in-from-bottom-2 delay-200">
-            {card.subtitle}
-          </p>
+          {/* Affirmation */}
+          {card.affirmation && (
+            <p className="font-serif italic opacity-80 text-lg">
+              &bdquo;{card.affirmation}&ldquo;
+            </p>
+          )}
         </div>
 
         <div className="text-left space-y-12 pt-6 w-full">
@@ -62,7 +68,8 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
           </section>
 
           <div className="space-y-6">
-            <section className="p-10 rounded-[40px] shadow-aspect-card">
+            {/* Shadow Box */}
+            <section className="bg-black/5 backdrop-filter backdrop-blur-md rounded-2xl p-6 mt-8">
               <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
                 Stínový aspekt
               </h4>
@@ -71,18 +78,17 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
               </p>
             </section>
 
-            <section className="p-12 rounded-[40px] surface-card relative overflow-hidden group">
-              <div
-                className="absolute top-0 left-0 w-full h-1 opacity-50 group-hover:opacity-100 transition-opacity"
-                style={{ background: 'linear-gradient(to right, #D4AF37, #F9F295, #B8860B)' }}
-              />
-              <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
-                Otázka k zamyšlení
-              </h4>
-              <p className="text-[color:var(--text)] text-3xl leading-snug font-serif tracking-tight">
-                {card.question}
-              </p>
-            </section>
+            {/* Question Section */}
+            {card.question && (
+              <section className="surface-card rounded-2xl p-6 text-center mt-8">
+                <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
+                  Otázka k zamyšlení
+                </h4>
+                <p className="text-[color:var(--text)] text-3xl leading-snug font-serif tracking-tight">
+                  {card.question}
+                </p>
+              </section>
+            )}
           </div>
         </div>
         <div className="mt-6 px-4 text-[10px] text-[color:var(--muted)] tracking-[0.1em] md:tracking-[0.3em] uppercase text-center whitespace-nowrap overflow-hidden text-ellipsis watermark-text">

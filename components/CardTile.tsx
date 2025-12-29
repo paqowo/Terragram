@@ -21,42 +21,43 @@ const CardTile: React.FC<CardTileProps> = ({ card }) => {
   const accentRgb = hexToRgb(card.accent);
 
   return (
-    <Link 
+    <Link
       to={`/card/${card.slug}`}
       className="relative group cursor-pointer aspect-square overflow-hidden rounded-[28px] lux-shimmer hover:-translate-y-2 transition-all duration-500 block hover:shadow-[0_25px_60px_-15px_rgba(var(--accent-rgb),0.2)]
-                 border-[1px] border-[color:rgba(var(--accent-rgb),0.1)] group-hover:border-[color:rgba(var(--accent-rgb),0.7)]"
+                 border-[1px] border-[color:rgba(var(--accent-rgb),0.1)] group-hover:border-[color:rgba(var(--accent-rgb),0.7)]
+                 surface-card p-6 flex flex-col items-center justify-between text-center space-y-4"
       style={{ '--accent-rgb': accentRgb } as React.CSSProperties}
     >
-      {/* Subtle background wash */}
-      <div 
-        className="absolute inset-0 transition-opacity duration-500"
-        style={{ backgroundColor: card.accent, opacity: 0.05 }}
-      />
-      
-      {/* Hover Glow Border - now integrated into main border */}
-      {/* <div
-        className="absolute top-0 left-0 w-full h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: `linear-gradient(90deg, transparent, rgba(${accentRgb}, 0.5), transparent)` }}
-      /> */}
+      {/* Top (The Spirit): Subtitle */}
+      <p className="text-[10px] tracking-[0.4em] uppercase opacity-60">
+        {card.subtitle || card.intro}
+      </p>
 
-      <div className="p-6 h-full flex flex-col items-center justify-center space-y-4 relative z-10">
-        <div className="relative flex items-center justify-center">
-          {/* Ambient Glow */}
-          <div 
-            className="absolute w-24 h-24 rounded-full blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-50"
-            style={{ backgroundColor: card.accent }}
-          />
-          
-          {/* Symbol */}
-          <div className="relative w-24 h-24 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-            <SymbolSVG slug={card.slug} color={card.accent} />
-          </div>
+      {/* Center (The Soul): SymbolSVG with glow */}
+      <div className="relative flex items-center justify-center my-auto symbol-glow-effect">
+        {/* Ambient Glow */}
+        <div
+          className="absolute w-24 h-24 rounded-full blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-50"
+          style={{ backgroundColor: card.accent }}
+        />
+        {/* Symbol */}
+        <div className="relative w-24 h-24 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+          <SymbolSVG slug={card.slug} color={card.accent} />
         </div>
-        
-        {/* Glass Label */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm bg-white/20 border border-white/30 text-center transition-all duration-300 group-hover:bg-white/40">
-          <h3 className="text-[10px] tracking-[0.25em] font-black text-[color:var(--text)] uppercase whitespace-nowrap">{card.title}</h3>
-        </div>
+      </div>
+
+      {/* Bottom (The Body) */}
+      <div className="space-y-2">
+        {/* Title */}
+        <h3 className="font-serif tracking-widest text-shadow-paper text-lg">
+          {card.title}
+        </h3>
+        {/* Affirmation */}
+        {card.affirmation && (
+          <p className="font-serif italic opacity-80 text-sm">
+            &bdquo;{card.affirmation}&ldquo;
+          </p>
+        )}
       </div>
     </Link>
   );

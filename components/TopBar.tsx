@@ -26,10 +26,10 @@ const TopBar: React.FC = () => {
       </div>
       <Link
         to="/about"
-        className="relative inline-block text-sm font-serif tracking-[0.2em] text-[color:var(--text)] transition-colors duration-300
+        className="relative inline-block text-[11px] font-serif tracking-[0.3em] text-[color:var(--muted)] transition-colors duration-300
                    after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[color:var(--gold)] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
       >
-        O terragramech
+        o terragramech
       </Link>
     </nav>
   );

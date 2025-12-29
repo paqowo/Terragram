@@ -103,7 +103,7 @@ const About: React.FC = () => {
 
       {activeContent && (
         <div className="about-modal-overlay" onClick={() => setActiveTile(null)}>
-          <div className="about-modal-card surface-card" onClick={event => event.stopPropagation()} role="dialog" aria-modal="true">
+          <div className="about-modal-card surface-card relative" onClick={event => event.stopPropagation()} role="dialog" aria-modal="true">
             <h3 className="font-serif tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2 delay-100">{activeContent.title}</h3>
             <div className="divider-gold w-full animate-in fade-in slide-in-from-bottom-2 delay-200"></div>
             {activeContent.body.split('\n\n').map((paragraph, index) => (
@@ -111,6 +111,19 @@ const About: React.FC = () => {
                 {paragraph}
               </p>
             ))}
+            <button
+              className="absolute top-4 right-4 text-gold-soft hover:text-white transition-colors duration-300 text-lg"
+              onClick={() => setActiveTile(null)}
+              aria-label="Zavřít"
+            >
+              &times;
+            </button>
+            <button
+              className="mt-8 font-serif uppercase text-xs tracking-[0.4em] border border-gold-soft py-2 px-4 hover:opacity-75 transition-opacity duration-300 mx-auto block"
+              onClick={() => setActiveTile(null)}
+            >
+              ZAVŘÍT
+            </button>
           </div>
         </div>
       )}
