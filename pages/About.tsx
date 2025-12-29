@@ -66,7 +66,7 @@ const About: React.FC = () => {
   const activeContent = useMemo(() => (activeTile !== null ? TILES[activeTile] : null), [activeTile]);
 
   return (
-    <div className="min-h-screen px-6 py-20">
+    <div className="min-h-screen px-6 pt-20 pb-24">
       <div className="about-section space-y-10">
         <div className="space-y-6 text-center">
           <p className="font-light text-[10px] tracking-[0.5em] text-[color:var(--muted)] animate-in fade-in slide-in-from-bottom-2 delay-100">o terragramech</p>

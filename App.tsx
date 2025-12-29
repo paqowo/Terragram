@@ -23,31 +23,15 @@ const App: React.FC = () => {
   }, []);
 
   const playZenPing = useCallback(() => {
-    const ctx = getAudioContext();
-    if (!ctx) return;
-
-    const oscillator = ctx.createOscillator();
-    const gainNode = ctx.createGain();
-
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(1000, ctx.currentTime); // Start at 1000Hz
-    oscillator.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.1); // Decay to 800Hz
-    
-    gainNode.gain.setValueAtTime(0.08, ctx.currentTime); // Initial volume (0.05 to 0.1 range)
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.5); // Decay over 0.5 seconds
-
-    oscillator.connect(gainNode);
-    gainNode.connect(ctx.destination);
-
-    oscillator.start(ctx.currentTime);
-    oscillator.stop(ctx.currentTime + 0.5); // Stop after 0.5 seconds
-  }, [getAudioContext]);
+    // Zen sound temporarily disabled as per user request
+    // console.log("playZenPing: Sound disabled.");
+  }, []); // Empty dependency array as it does nothing
 
   return (
     <ZenSoundContext.Provider value={{ playZenPing }}>
-      <div className="min-h-screen relative overflow-hidden"> {/* Main wrapper for particles */}
+      <div className="min-h-screen relative"> {/* Main wrapper for particles, removed overflow-hidden */}
         <div className="gold-dust-particles"></div> {/* Particles background */}
-        <div className="min-h-screen flex flex-col overflow-x-hidden relative z-10"> {/* Original content wrapper */}
+        <div className="min-h-screen flex flex-col overflow-x-hidden relative z-10" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}> {/* Original content wrapper, with safe area padding */}
           <TopBar />
           <main className="flex-grow">
             <Routes>

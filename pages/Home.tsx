@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-12 animate-in fade-in duration-1000">
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 pb-24 space-y-12 animate-in fade-in duration-1000">
       
       <div className="lux-shimmer p-4 rounded-full">
         <a href="https://www.freecooperation.cz" target="_blank" rel="noopener noreferrer">

@@ -28,7 +28,7 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
   }, [card.accent]);
 
   return (
-    <div className="w-full max-w-lg mx-auto pb-20 px-6 pt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]">
+    <div className="w-full max-w-lg mx-auto pb-24 px-6 pt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]">
       <div className="flex flex-col items-center text-center space-y-8">
         {/* Top (The Spirit): Subtitle */}
         <p className="text-[10px] tracking-[0.4em] uppercase opacity-60">
@@ -69,7 +69,7 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
 
           <div className="space-y-6">
             {/* Shadow Box */}
-            <section className="bg-black/5 backdrop-filter backdrop-blur-md rounded-2xl p-6 mt-8">
+            <section className="bg-[color:var(--surface)]/5 backdrop-filter backdrop-blur-md rounded-2xl p-6 mt-8">
               <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
                 Stínový aspekt
               </h4>
@@ -84,7 +84,7 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
                 <h4 className="text-[10px] font-black tracking-[0.3em] text-[color:var(--muted)] uppercase mb-4">
                   Otázka k zamyšlení
                 </h4>
-                <p className="text-[color:var(--text)] text-3xl leading-snug font-serif tracking-tight">
+                <p className="text-[color:var(--text)] text-xl md:text-3xl leading-snug font-serif tracking-tight text-balance">
                   {card.question}
                 </p>
               </section>

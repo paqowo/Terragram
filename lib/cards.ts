@@ -189,8 +189,6 @@ export const CARDS: Card[] = [
     subtitle: 'společný tanec',
     affirmation: 'Společně tvoříme více, než bychom dokázali sami.',
     description: 'Spolupráce znamená společné úsilí zaměřené na dosažení prospěchu všech, kteří se na něm podílejí. Svobodná spolupráce vyrovnává vesmírnou dualitu a umožňuje Božskému JÁ přijmout celistvé poznání.',
-    shadow: 'Stín: Rivalita, neschopnost sdílet zásluhy.',
-    question: 'S kým se mohu dnes spojit pro vytvoření něčeho krásného?',
     accent: '#2E8B57', // Zelená z loga Image 7
     imagePath: '/assets/cards/spoluprace.webp'
   }

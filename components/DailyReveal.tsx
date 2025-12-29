@@ -29,7 +29,7 @@ const DailyReveal: React.FC = () => {
   if (!card) return null;
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 py-10 gap-8">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 pt-10 pb-24 gap-8">
       
       {/* The new "Sacred Ritual" card view */}
       {!revealed && (
@@ -43,7 +43,7 @@ const DailyReveal: React.FC = () => {
           <div className="absolute inset-0 w-full h-full rounded-3xl surface-card" />
 
           {/* Ambient Glow */}
-          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-orange-400/50 blur-3xl animate-pulse-slow rounded-full" />
+          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-[color:var(--ambient-accent)]/50 blur-3xl animate-pulse-slow rounded-full" />
           
           {/* Content: Centered Logo and Text */}
           <div className="relative w-full h-full flex flex-col items-center justify-center p-8">

@@ -9,7 +9,7 @@ const Gallery: React.FC = () => {
   const supplementaryCards = CARDS.filter(card => ['ja-jsem', 'novy-vek', 'spoluprace'].includes(card.slug));
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-6">
+    <div className="min-h-screen pt-24 pb-24 px-6">
       <header className="mb-10 text-center space-y-3">
         <h1 className="text-2xl font-light tracking-[0.1em] text-[color:var(--text)] uppercase text-balance">
           Galerie Terragramů
