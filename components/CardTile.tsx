@@ -6,6 +6,9 @@ import { SymbolSVG } from './SymbolSVG';
 
 interface CardTileProps {
   card: Card;
+  onClick?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 // Helper to convert hex color to a comma-separated RGB string
@@ -17,16 +20,17 @@ const hexToRgb = (hex: string): string => {
 };
 
 
-const CardTile: React.FC<CardTileProps> = ({ card }) => {
+const CardTile: React.FC<CardTileProps> = ({ card, onClick, className, style }) => {
   const accentRgb = hexToRgb(card.accent);
 
   return (
     <Link
       to={`/card/${card.slug}`}
-      className="relative group cursor-pointer aspect-square overflow-hidden rounded-[28px] lux-shimmer hover:-translate-y-2 transition-all duration-500 block hover:shadow-[0_25px_60px_-15px_rgba(var(--accent-rgb),0.2)]
+      onClick={onClick}
+      className={`relative group cursor-pointer aspect-square overflow-hidden rounded-[28px] lux-shimmer hover:-translate-y-2 transition-all duration-500 block hover:shadow-[0_25px_60px_-15px_rgba(var(--accent-rgb),0.2)]
                  border-[1px] border-[color:rgba(var(--accent-rgb),0.1)] group-hover:border-[color:rgba(var(--accent-rgb),0.7)]
-                 surface-card p-6 flex flex-col items-center justify-between text-center space-y-4"
-      style={{ '--accent-rgb': accentRgb } as React.CSSProperties}
+                 surface-card p-6 flex flex-col items-center justify-between text-center space-y-4 ${className}`}
+      style={{ '--accent-rgb': accentRgb, ...style } as React.CSSProperties}
     >
       {/* Top (The Spirit): Subtitle */}
       <p className="text-[10px] tracking-[0.4em] uppercase opacity-60">
