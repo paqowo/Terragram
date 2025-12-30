@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card } from '../types';
 import { SymbolSVG } from './SymbolSVG';
 
@@ -14,6 +14,8 @@ const hexToRgb = (hex: string): string => {
 };
 
 const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
+  const detailViewRef = useRef<HTMLDivElement>(null);
+
   // Bezpečná extrakce stínu (ošetření prázdného řetězce)
   const shadowText = card.shadow ? card.shadow.replace(/^Stín:\s*/i, '') : '';
 
@@ -26,8 +28,20 @@ const CardDetailView: React.FC<CardDetailViewProps> = ({ card }) => {
     };
   }, [card.accent]);
 
+  useEffect(() => {
+    if (detailViewRef.current) {
+      detailViewRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [card.id]);
+
   return (
-    <div className="w-full max-w-lg mx-auto pb-24 px-6 pt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+    <div
+      ref={detailViewRef}
+      className="w-full max-w-lg mx-auto pb-24 px-6 pt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000"
+    >
       <div className="flex flex-col items-center text-center space-y-8">
         <p className="text-[10px] tracking-[0.4em] uppercase opacity-60">
           {card.subtitle}
