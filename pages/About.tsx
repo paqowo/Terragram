@@ -32,7 +32,7 @@ V okamžiku vnitřního ztišení a přijetí se symbol aktivuje. Poukazuje na p
   {
     title: 'Svobodná spolupráce',
     intro: 'Energie, kterou nelze zneužít.',
-    body: `Základním zákonem Terragramů je svobodná spolupráce. Jsou nástrojem světla, a proto jejich energii nelze zneužít k negativním účelům. 
+    body: `Základním zákonem Terragramů je svobodná spolupráce. Jsou nástrojem vývoje a proto jejich energii nelze zneužít k negativním účelům. 
 
 Působí pouze tam, kde je přítomna láska a pokora k vývoji. Symboly nenutí, nevedou ani nezasahují proti vůli. Jsou tu, aby vyrovnávaly vesmírnou dualitu a umožnily Božímu JÁ přijmout celistvé poznání.`
   },
@@ -41,12 +41,12 @@ Působí pouze tam, kde je přítomna láska a pokora k vývoji. Symboly nenutí
     intro: 'Od rituálu k energetickému zářiči.',
     body: `S Terragramy lze pracovat mnoha způsoby, podle toho, co vaše cesta právě vyžaduje. Mohou být denním rituálem, průvodcem při výkladu nebo nástrojem pro kolektivní konstelace.
 
-Slouží také jako energetické zářiče – pročišťují prostor od negativních energií, harmonizují krajinu a pomáhají regenerovat zraněná místa Země. Terragram vám neříká, co máte dělat; ukazuje vám, kým v danou chvíli jste.`
+Slouží také jako energetické zářiče – pročišťují prostor od pokřivených energií, harmonizují krajinu a pomáhají regenerovat zraněná místa Země. Terragram vám neříká, co máte dělat; ukazuje vám, kým v danou chvíli jste.`
   },
   {
     title: 'Sjednocení',
     intro: 'Návrat z oddělenosti ke zdroji.',
-    body: `Soubor Terragramů tvoří uzavřený celek, chrám portálu sjednocení. Je to nástroj pro mystickou svatbu Duše a Ducha.
+    body: `Soubor Terragramů tvoří celek, chrám portálu sjednocení. Je to nástroj pro mystickou svatbu Duše a Ducha.
 
 Sjednocení znamená konec hledání cesty. Je to stav, kdy si uvědomíte, že nejste odděleni od vědění, ale jste jeho součástí. V tomto bodě se rozpouští dualita a vy se navracíte na své právoplatné místo v evolučním plánu vzestupu.`
   },
